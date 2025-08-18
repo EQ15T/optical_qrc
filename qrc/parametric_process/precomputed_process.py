@@ -1,12 +1,15 @@
+# Parametric process simulation with a precomputed phase-matching function.
+
 from .abstract_process import AbstractProcess
 
 import importlib.resources as resources
 import numpy as np
 import os
 import scipy as sp
+from typing import BinaryIO, Optional
 
 
-def open_data_file(file_name: str) -> file:
+def open_data_file(file_name: str) -> BinaryIO:
     """
     Locate and open a binary data file from the local filesystem or package data directory.
     The first match found is opened and returned as a file-like object.
@@ -34,7 +37,7 @@ def open_data_file(file_name: str) -> file:
 
 class ParametricProcess(object):
     """
-    Load and simulate a parametric process with a precomputed phase-matching function.
+    Simulate a parametric process with a precomputed phase-matching function.
 
     This implementation computes the joint spectral amplitude (JSA) from
     stored phase-matching data and a computed pump function, then computes its SVD

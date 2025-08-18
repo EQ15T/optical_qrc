@@ -1,3 +1,5 @@
+# Interface to IQO's Parametric process simulation code.
+
 from .abstract_process import AbstractProcess
 from .iqo import Process as proc
 

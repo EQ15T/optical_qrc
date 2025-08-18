@@ -48,7 +48,7 @@ The following code describe how to use the general encoding (pump shaping) to le
 ```python
 from qrc.parametric_process.precomputed_process import ParametricProcess
 from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
-from qrc.task.function_task import FunctionTask
+from qrc.task.regression_task import RegressionTask
 from qrc.task.benchmarks import parity_check
 
 from functools import partial
@@ -63,7 +63,7 @@ r = PumpShapingProtocol(6, 4, pp)
 r.reset(seed=0)
 
 # The reservoir is going to be used to learn a binary function
-t = FunctionTask(binary=True)
+t = RegressionTask(binary=True)
 
 # Feed the reservoir with a random input sequence, collect output observables
 t.run(r, num_washout=10, num_train=180, num_test=50, seed=0)

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optical_qrc"
+version = "1.0.0"
+description = "Library and scripts for reproducing results from 'Experimental memory control in continuous variable optical quantum reservoir computing'"
+authors = [
+  { name="Emilie Gillet", email="emilie.gillet@etu.sorbonne-universite.fr" },
+  { name="Iris Paparelle", email="iris.paparelle@lkb.upmc.fr" }
+]
+dependencies = [
+  "numpy>=1.23",
+  "scipy",
+  "matplotlib>=3.10",
+  "scikit-learn",
+  "pandas",
+  "tqdm",
+  "pytest"
+]
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.urls]
+Homepage = "https://github.com/roseopicta/optical_qrc"
