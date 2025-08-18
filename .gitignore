@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-log.txt
+venv/
+env/
+playground/
+qrc/parametric_process/iqo/
+results/
+figures/
