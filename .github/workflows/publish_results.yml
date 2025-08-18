@@ -34,7 +34,6 @@ jobs:
       run: |
         export TQDM_DISABLE=1
         for f in simulations/fig*.py; do
-        #for f in simulations/fig4a_*.py; do
           echo "Running $f"
           python "$f"
         done
