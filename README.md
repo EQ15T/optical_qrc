@@ -73,7 +73,7 @@ t.train(partial(parity_check, tau=1))
 
 # Plot the input sequence, observables, and the true and predicted outputs
 t.score(plot_results=True)
-~~~
+```
 
 ## Dependencies
 
