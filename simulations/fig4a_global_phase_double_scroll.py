@@ -7,7 +7,9 @@ from matplotlib import gridspec
 from matplotlib import pyplot as plt
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
-FIGURE_FILES = [os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ['png', 'pdf']]
+FIGURE_FILES = [
+    os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+]
 
 
 RESERVOIR_PARAMETERS = ReservoirParameters(

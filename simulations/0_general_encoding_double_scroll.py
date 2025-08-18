@@ -14,7 +14,9 @@ from tqdm import tqdm
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".csv")
-FIGURE_FILES = [os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ['png', 'pdf']]
+FIGURE_FILES = [
+    os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+]
 METRIC = "NMSE"
 
 
@@ -45,7 +47,7 @@ def compute_results(params_dicts: dict, num_trials: int):
             task.train()
             result = task.score()
             NMSE, corrcoeff = result.nmse, result.corrcoeff
-            #results.append(dict((name, locals()[name]) for name in saved_vars))
+            # results.append(dict((name, locals()[name]) for name in saved_vars))
             d = {}
             for name in saved_vars:
                 d[name] = locals()[name]

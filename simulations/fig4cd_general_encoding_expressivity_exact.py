@@ -12,7 +12,9 @@ from tqdm import tqdm
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".pkl")
-FIGURE_FILES = [os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ['png', 'pdf']]
+FIGURE_FILES = [
+    os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+]
 
 
 def compute_ranks_and_correlations(inputs, N: int, n: int, trial: int, num_samples=50):
@@ -46,7 +48,7 @@ def compute_results(N_values, num_trials: int):
             inputs = np.tile(2 * np.random.rand(num_samples, 1), N)
             for n in tqdm(range(1, 10), desc="n value", leave=False):
                 rank, corrcoeff = compute_ranks_and_correlations(inputs, N, n, trial)
-                #results.append({name: locals()[name] for name in saved_vars})
+                # results.append({name: locals()[name] for name in saved_vars})
                 d = {}
                 for name in saved_vars:
                     d[name] = locals()[name]

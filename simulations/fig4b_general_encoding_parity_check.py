@@ -13,7 +13,9 @@ from tqdm import tqdm
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".csv")
-FIGURE_FILES = [os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ['png', 'pdf']]
+FIGURE_FILES = [
+    os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+]
 METRIC = "accuracy"
 
 
@@ -39,7 +41,7 @@ def compute_results(params_dicts: dict, num_trials: int):
                 task.train(partial(parity_check, tau=tau))
                 result = task.score()
                 accuracy, corrcoeff = result.accuracy, result.corrcoeff
-                #results.append({name: locals()[name] for name in saved_vars})
+                # results.append({name: locals()[name] for name in saved_vars})
                 d = {}
                 for name in saved_vars:
                     d[name] = locals()[name]

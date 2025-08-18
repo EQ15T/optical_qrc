@@ -1,6 +1,5 @@
 from qrc.parametric_process.precomputed_process import ParametricProcess
 from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
-from qrc.reservoir import pump_shaping_protocol as psp
 from qrc.task.regression_task import RegressionTask
 from qrc.task.benchmarks import parity_check
 
