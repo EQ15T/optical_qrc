@@ -25,5 +25,6 @@ jobs:
 
     - name: Install and test
       run: |
+        export TQDM_DISABLE=1
         python -m pip install wheels/optical_qrc-*-py3-none-any.whl
         pytest
