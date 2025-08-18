@@ -69,7 +69,7 @@ def compute_results(params_dicts: dict, noise_level: float, num_trials: int):
             )
             task.train(partial(delay, delay=tau))
             capacity = task.score().corrcoeff
-            results.append({name: eval(name) for name in saved_vars})
+            results.append(dict((name, locals()[name]) for name in saved_vars))
 
     df = pd.DataFrame(results)
     df.to_csv(RESULTS_FILE, index=False)
