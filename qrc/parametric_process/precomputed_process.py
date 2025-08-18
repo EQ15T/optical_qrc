@@ -2,7 +2,7 @@
 
 from .abstract_process import AbstractProcess
 
-import importlib.resources as resources
+from importlib import resources
 import numpy as np
 import os
 import scipy as sp
@@ -23,7 +23,7 @@ def open_data_file(file_name: str) -> BinaryIO:
     Raises:
         FileNotFoundError.
     """
-    pkg_data = resources.files(__package__).joinpath("data")
+    pkg_data = resources.files("qrc.parametric_process").joinpath("data")
     candidates = [file_name, pkg_data / file_name, pkg_data / (file_name + ".npz")]
     for path in candidates:
         if isinstance(path, str) and os.path.isfile(path):

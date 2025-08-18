@@ -48,10 +48,15 @@ jobs:
           echo "![${filename}](figures/png/${filename})" >> README.md
         done
 
+    - name: Prepare deploy folder
+      run: |
+        mkdir -p deploy
+        cp -r figures results README.md deploy/
+
     - name: Deploy to results branch
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: results
-        publish_dir: ./
+        publish_dir: ./deploy
         keep_files: false

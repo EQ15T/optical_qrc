@@ -24,5 +24,8 @@ requires-python = ">=3.10"
 [tool.setuptools.packages.find]
 where = ["."]
 
+[tool.setuptools.package-data]
+"qrc.parametric_process" = ["data/*"]
+
 [project.urls]
 Homepage = "https://github.com/roseopicta/optical_qrc"
