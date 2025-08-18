@@ -20,6 +20,10 @@ python simulations/fig4a_global_phase_double_scroll.py
 
 The generated figures are saved in the ```figures``` and raw dataframes in ```results```.
 
+## Results
+
+The result of running the code on github's CI servers can be found [here](https://github.com/roseopicta/optical_qrc/tree/results).
+
 ## Code organization
 
 A large part of the code in ```qrc``` can be used, and extended, as a simple library for simulating (quantum) reservoir computing protocols:
