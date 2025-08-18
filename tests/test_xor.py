@@ -46,8 +46,3 @@ def test_xor_pump_shaping():
     t.train(partial(parity_check, tau=1))
     results = t.score()
     assert results.accuracy >= 0.95, "Accuracy should exceed 95%"
-
-
-if __name__ == "__main__":
-    test_xor_global_phase()
-    test_xor_pump_shaping()
