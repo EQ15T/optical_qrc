@@ -39,7 +39,11 @@ def compute_results(params_dicts: dict, num_trials: int):
                 task.train(partial(parity_check, tau=tau))
                 result = task.score()
                 accuracy, corrcoeff = result.accuracy, result.corrcoeff
-                results.append(dict((name, locals()[name]) for name in saved_vars))
+                #results.append({name: locals()[name] for name in saved_vars})
+                d = {}
+                for name in saved_vars:
+                    d[name] = locals()[name]
+                results.append(d)
 
     df = pd.DataFrame(results)
     df.to_csv(RESULTS_FILE, index=False)

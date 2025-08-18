@@ -43,7 +43,11 @@ def compute_results(params_dicts: dict, num_trials: int, noise: float):
             task.train()
             corrcoeff = task.score().corrcoeff
             acc += corrcoeff
-            results.append(dict((name, locals()[name]) for name in saved_vars))
+            #results.append({name: locals()[name] for name in saved_vars})
+            d = {}
+            for name in saved_vars:
+                d[name] = locals()[name]
+            results.append(d)
 
     df = pd.DataFrame(results)
     df.to_pickle(RESULTS_FILE)

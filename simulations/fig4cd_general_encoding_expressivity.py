@@ -46,7 +46,11 @@ def compute_results(N_values, num_trials: int):
         for n in tqdm(range(1, 10), desc="n value", leave=False):
             for trial in tqdm(range(num_trials), desc="Trial", leave=False):
                 rank, corrcoeff = compute_ranks_and_correlations(N, n, trial)
-                results.append(dict((name, locals()[name]) for name in saved_vars))
+                #results.append({name: locals()[name] for name in saved_vars})
+                d = {}
+                for name in saved_vars:
+                    d[name] = locals()[name]
+                results.append(d)
 
     df = pd.DataFrame(results)
     df.to_pickle(RESULTS_FILE)
