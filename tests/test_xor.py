@@ -1,16 +1,16 @@
 # Not really a unit test :) but serves as an example too.
 
+from functools import partial
+
+import matplotlib.pyplot as plt
+import numpy as np
 import pytest
 
 from qrc.parametric_process.precomputed_process import ParametricProcess
-from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 from qrc.reservoir.global_phase_protocol import GlobalPhaseProtocol, ReservoirParameters
-from qrc.task.regression_task import RegressionTask
+from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 from qrc.task.benchmarks import parity_check
-
-from functools import partial
-import matplotlib.pyplot as plt
-import numpy as np
+from qrc.task.regression_task import RegressionTask
 
 
 def test_xor_global_phase():

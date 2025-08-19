@@ -1,10 +1,11 @@
 # Abstract base class for a reservoir computing task.
 
-from ..reservoir.abstract_reservoir import AbstractReservoir
-
 from abc import ABC, abstractmethod
-import numpy as np
 from typing import List, Optional
+
+import numpy as np
+
+from ..reservoir.abstract_reservoir import AbstractReservoir
 
 
 class AbstractTask(ABC):

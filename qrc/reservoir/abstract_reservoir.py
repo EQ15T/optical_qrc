@@ -1,8 +1,8 @@
 # Abstract base class for reservoir implementations.
 
-import numpy as np
-
 from abc import ABC, abstractmethod
+
+import numpy as np
 
 
 class AbstractReservoir(ABC):

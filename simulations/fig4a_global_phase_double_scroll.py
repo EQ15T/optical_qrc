@@ -1,10 +1,11 @@
+import os
+
+from matplotlib import gridspec
+from matplotlib import pyplot as plt
+
 from qrc.reservoir.global_phase_protocol import GlobalPhaseProtocol, ReservoirParameters
 from qrc.task.benchmarks import doublescroll
 from qrc.task.dynamical_system_task import DynamicalSystemTask
-
-import os
-from matplotlib import gridspec
-from matplotlib import pyplot as plt
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 FIGURE_FILES = [

@@ -1,11 +1,11 @@
 # Interface to IQO's Parametric process simulation code.
 
-from .abstract_process import AbstractProcess
-from .iqo import Process as proc
-
-import numpy as np
 from typing import Tuple
 
+import numpy as np
+
+from .abstract_process import AbstractProcess
+from .iqo import Process as proc
 
 DEFAULT_PDC_PARAMS = dict(
     length=15e-3,

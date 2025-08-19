@@ -1,12 +1,13 @@
 # Parametric process simulation with a precomputed phase-matching function.
 
-from .abstract_process import AbstractProcess
-
-from importlib import resources
-import numpy as np
 import os
-import scipy as sp
+from importlib import resources
 from typing import BinaryIO, Optional
+
+import numpy as np
+import scipy as sp
+
+from .abstract_process import AbstractProcess
 
 
 def open_data_file(file_name: str) -> BinaryIO:

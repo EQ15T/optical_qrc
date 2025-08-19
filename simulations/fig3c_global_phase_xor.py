@@ -1,16 +1,16 @@
+import os
+from functools import partial
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib import gridspec
+from matplotlib.patches import Rectangle
+from tqdm import tqdm
+
 from qrc.reservoir.global_phase_protocol import GlobalPhaseProtocol, ReservoirParameters
 from qrc.task.benchmarks import parity_check
 from qrc.task.regression_task import RegressionTask
-
-from functools import partial
-from matplotlib import gridspec
-from matplotlib.patches import Rectangle
-import matplotlib.pyplot as plt
-import numpy as np
-import os
-import pandas as pd
-from tqdm import tqdm
-
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".csv")

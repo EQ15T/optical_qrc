@@ -1,12 +1,12 @@
 # The protocol described in C.2 of arXiv:2506.07279 [quant-ph].
 
-from ..parametric_process.abstract_process import AbstractProcess
-
-from .abstract_reservoir import AbstractReservoir
-from . import gaussian_utils
+from typing import List, Optional, Tuple
 
 import numpy as np
-from typing import List, Optional, Tuple
+
+from ..parametric_process.abstract_process import AbstractProcess
+from . import gaussian_utils
+from .abstract_reservoir import AbstractReservoir
 
 
 def supermode_basis_to_frexel_basis(

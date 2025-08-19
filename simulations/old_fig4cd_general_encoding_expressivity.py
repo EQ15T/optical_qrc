@@ -1,14 +1,14 @@
-from qrc.parametric_process.precomputed_process import ParametricProcess
-from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
+import os
 
-from matplotlib import gridspec
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 import pandas as pd
+from matplotlib import gridspec
 from sklearn.preprocessing import StandardScaler
 from tqdm import tqdm
 
+from qrc.parametric_process.precomputed_process import ParametricProcess
+from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".pkl")

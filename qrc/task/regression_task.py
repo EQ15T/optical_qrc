@@ -1,8 +1,6 @@
 # A task consisting in learning a function of an input sequence.
 
-from ..reservoir.abstract_reservoir import AbstractReservoir
-from .abstract_task import AbstractTask
-from . import evaluation_metrics
+from typing import Callable, List, NamedTuple, Optional
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,7 +8,10 @@ from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from tqdm.autonotebook import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
-from typing import List, Optional, Callable, NamedTuple
+
+from ..reservoir.abstract_reservoir import AbstractReservoir
+from . import evaluation_metrics
+from .abstract_task import AbstractTask
 
 
 class RegressionTaskResult(NamedTuple):

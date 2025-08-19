@@ -1,8 +1,9 @@
 # Abstract interface for the simulation of a parametric process.
 
 from abc import ABC, abstractmethod
-import numpy as np
 from typing import NamedTuple
+
+import numpy as np
 
 
 class AbstractProcess(ABC):

@@ -1,8 +1,8 @@
 # "Ideal" reservoir with polynomial non-linearity and memory.
 
-from .abstract_reservoir import AbstractReservoir
-
 import numpy as np
+
+from .abstract_reservoir import AbstractReservoir
 
 
 class DelayLineReservoir(AbstractReservoir):

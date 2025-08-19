@@ -1,15 +1,15 @@
-from qrc.reservoir.global_phase_protocol import GlobalPhaseProtocol, ReservoirParameters
-from qrc.task.benchmarks import doublescroll
-from qrc.task.dynamical_system_task import DynamicalSystemTask
+import os
 
-from matplotlib.colors import Normalize
 import matplotlib.gridspec as gridspec
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 import pandas as pd
+from matplotlib.colors import Normalize
 from tqdm import tqdm
 
+from qrc.reservoir.global_phase_protocol import GlobalPhaseProtocol, ReservoirParameters
+from qrc.task.benchmarks import doublescroll
+from qrc.task.dynamical_system_task import DynamicalSystemTask
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".pkl")

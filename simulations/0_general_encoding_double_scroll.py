@@ -1,16 +1,16 @@
-from qrc.parametric_process.precomputed_process import ParametricProcess
-from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
-from qrc.reservoir import delay_line_reservoir as dl
-from qrc.task.benchmarks import doublescroll
-from qrc.task.dynamical_system_task import DynamicalSystemTask
-
+import os
 from functools import partial
+
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 import pandas as pd
 from tqdm import tqdm
 
+from qrc.parametric_process.precomputed_process import ParametricProcess
+from qrc.reservoir import delay_line_reservoir as dl
+from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
+from qrc.task.benchmarks import doublescroll
+from qrc.task.dynamical_system_task import DynamicalSystemTask
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results", FILENAME + ".csv")

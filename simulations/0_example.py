@@ -1,11 +1,12 @@
-from qrc.parametric_process.precomputed_process import ParametricProcess
-from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
-from qrc.task.regression_task import RegressionTask
-from qrc.task.benchmarks import parity_check
-
 from functools import partial
+
 import matplotlib.pyplot as plt
 import numpy as np
+
+from qrc.parametric_process.precomputed_process import ParametricProcess
+from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
+from qrc.task.benchmarks import parity_check
+from qrc.task.regression_task import RegressionTask
 
 # from qrc.parametric_process.process import ParametricProcess, DEFAULT_PDC_PARAMS
 # pp = ParametricProcess(DEFAULT_PDC_PARAMS)

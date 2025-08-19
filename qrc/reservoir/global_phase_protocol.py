@@ -1,10 +1,11 @@
 # The protocol described in C.1 of arXiv:2506.07279 [quant-ph].
 
-from .abstract_reservoir import AbstractReservoir
-
 from dataclasses import dataclass
-import numpy as np
 from typing import Optional
+
+import numpy as np
+
+from .abstract_reservoir import AbstractReservoir
 
 
 @dataclass
