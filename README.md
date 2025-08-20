@@ -10,7 +10,11 @@ cd optical_qrc
 pip install -e .
 ```
 
-## Reproducing results and figures
+## Dependencies
+
+The code requires the following libraries: numpy (>= 1.22), matplotlib (>= 3.10), scikit-learn, pandas, pytest and tdqm. These dependencies are automatically installed when running ```pip install``.
+
+## Instructions for reproducing results and figures
 
 Each script in ```simulations``` is intended to be run from the command line and corresponds to a figure (and the underlying simulation) from the manuscript. For example, to reproduce figure 4a:
 
@@ -18,11 +22,11 @@ Each script in ```simulations``` is intended to be run from the command line and
 python simulations/fig4a_global_phase_double_scroll.py
 ```
 
-The generated figures are saved in the ```figures``` and raw dataframes in ```results```.
+The generated figures are saved in the ```figures``` and the raw dataframes in ```results```. Dataframes containing only scalar values are saved in ```csv``` format, and those storing arrays as pickle files.
 
-## Results
+The run-time is at most 10 minutes per simulation on a recent desktop computer.
 
-The result of running the code on github's CI servers can be found [here](https://github.com/roseopicta/optical_qrc/tree/results).
+The code also runs as a github continuous integration workflow, and the results are saved [here](https://github.com/roseopicta/optical_qrc/tree/results).
 
 ## Code organization
 
@@ -79,6 +83,3 @@ t.train(partial(parity_check, tau=1))
 t.score(plot_results=True)
 ```
 
-## Dependencies
-
-The code requires the following libraries: numpy (>= 1.22), matplotlib (>= 3.10), pandas, and tdqm
