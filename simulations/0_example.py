@@ -1,7 +1,6 @@
 from functools import partial
 
 import matplotlib.pyplot as plt
-import numpy as np
 
 from qrc.parametric_process.precomputed_process import ParametricProcess
 from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
@@ -30,3 +29,4 @@ t.train(partial(parity_check, tau=1))
 
 # Plot the input sequence, observables, and the true and predicted outputs
 t.score(plot_results=True)
+plt.show()
