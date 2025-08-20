@@ -28,12 +28,12 @@ jobs:
 
     - name: Prepare directories
       run: |
-        mkdir -p figures/pdf figures/png results
+        mkdir -p results/figures/pdf results/figures/png results/data
 
     - name: Run all simulation scripts
       run: |
         export TQDM_DISABLE=1
-        for f in simulations/fig*.py; do
+        for f in simulations/fig3c*.py; do
           echo "Running $f"
           python "$f"
         done
@@ -42,7 +42,7 @@ jobs:
       run: |
         echo "# Generated figures" > README.md
         echo "" >> README.md
-        for img in figures/png/*; do
+        for img in results/figures/png/*; do
           filename=$(basename "$img")
           echo "![${filename}](figures/png/${filename})" >> README.md
         done
@@ -50,7 +50,7 @@ jobs:
     - name: Prepare deploy folder
       run: |
         mkdir -p deploy
-        cp -r figures results README.md deploy/
+        cp -r results/figures results/data README.md deploy/
 
     - name: Deploy to results branch
       uses: peaceiris/actions-gh-pages@v4

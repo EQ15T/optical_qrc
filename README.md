@@ -22,7 +22,7 @@ Each script in ```simulations``` is intended to be run from the command line and
 python simulations/fig4a_global_phase_double_scroll.py
 ```
 
-The generated figures are saved in the ```figures``` and the raw dataframes in ```results```. Dataframes containing only scalar values are saved in ```csv``` format, and those storing arrays as pickle files.
+The generated figures are saved in the ```results/figures``` and the raw dataframes in ```results/data```. Dataframes containing only scalar values are saved in ```csv``` format, and those storing arrays as pickle files.
 
 The run-time is at most 10 minutes per simulation on a recent desktop computer.
 

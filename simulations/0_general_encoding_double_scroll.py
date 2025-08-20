@@ -13,9 +13,9 @@ from qrc.task.benchmarks import doublescroll
 from qrc.task.dynamical_system_task import DynamicalSystemTask
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
-RESULTS_FILE = os.path.join("results", FILENAME + ".csv")
+RESULTS_FILE = os.path.join("results/data", FILENAME + ".csv")
 FIGURE_FILES = [
-    os.path.join(f"figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
 ]
 METRIC = "NMSE"
 
