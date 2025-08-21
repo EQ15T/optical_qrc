@@ -61,6 +61,8 @@ from qrc.task.benchmarks import parity_check
 
 from functools import partial
 
+import matplotlib.pyplot as plt
+
 # Load precomputed variables for PDC simulation
 pp = ParametricProcess("ktp_780nm_pdc")
 
@@ -81,5 +83,6 @@ t.train(partial(parity_check, tau=1))
 
 # Plot the input sequence, observables, and the true and predicted outputs
 t.score(plot_results=True)
+plt.show()
 ```
 
