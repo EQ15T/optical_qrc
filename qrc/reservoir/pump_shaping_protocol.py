@@ -102,8 +102,7 @@ class PumpShapingProtocol(AbstractReservoir):
         self,
         frexel_delta_n: List[float],
         frexel_a_n: Optional[List[float]] = None,
-        gain: float = 1.7,
-        align_phases: bool = False,
+        gain: float = 1.7
     ) -> np.ndarray:
         """
         Compute the covariance matrix for the PDC process.
@@ -116,11 +115,11 @@ class PumpShapingProtocol(AbstractReservoir):
             frexel_delta_n (list): frexel phase parameters.
             frexel_a_n (list, optional): Array representing frexel
                 amplitude parameters. If None, uses a Gaussian profile.
-            gain (float, optional): Overall gain of the process. If None,
-                the gain is computed to match the target squeezing level.
+            gain (float): Overall gain of the process (to match the target
+                squeezing level)
 
         Returns:
-            np.ndarray: The computed covariance matrix (S.T @ D @ S).
+            np.ndarray: The computed covariance matrix.
         """
         result = self._parametric_process.compute_svd(
             self._gaussian_profile if frexel_a_n is None else frexel_a_n, frexel_delta_n
@@ -128,12 +127,6 @@ class PumpShapingProtocol(AbstractReservoir):
 
         n = self._num_measured_frexels
         modes = result.modes[:, :n]
-
-        if align_phases:
-            for i in range(n):
-                phi = np.argmax(np.abs(modes[:, i]))
-                modes[:, i] /= modes[phi, i]
-
         lambdas = gain * result.schmidt_coeffs[0:n]
         d = np.diag(gaussian_utils.lambda_to_squeezing(lambdas))
         u = supermode_basis_to_frexel_basis(modes, n, self._frexels_width)
