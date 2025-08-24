@@ -203,7 +203,7 @@ class DynamicalSystemTask(AbstractTask):
                 x_trimmed, label=[f"observable {i}" for i in range(x_trimmed.shape[1])]
             )
             axs[0].legend(bbox_to_anchor=(1.04, 0.5), loc="center left")
-            axs[1].imshow(x[self._num_train :,])
+            axs[1].imshow(x[self._num_train :,].T)
 
             for j in range(y_pred.shape[1]):
                 axs[2 + j].plot(y_pred[self._num_train :, j], label="prediction")
