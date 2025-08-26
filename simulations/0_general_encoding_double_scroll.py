@@ -87,13 +87,14 @@ if __name__ == "__main__":
 
     num_trials = 10
     params_dicts = [
+        {"reservoir": "delay line", "tau": 0, "degree": 1},
+        {"reservoir": "delay line", "tau": 1, "degree": 1},
+    }
+    params_dicts = [
         {"reservoir": "pump shaping", "N": 6, "n": 4},
         {"reservoir": "pump shaping", "N": 9, "n": 4},
         {"reservoir": "pump shaping", "N": 9, "n": 6},
-        {"reservoir": "delay line", "tau": 0, "degree": 1},
-        {"reservoir": "delay line", "tau": 1, "degree": 1},
     ]
-
     if force_run or not os.path.exists(RESULTS_FILE):
         compute_results(params_dicts, num_trials)
 
