@@ -1,6 +1,6 @@
 # The protocol described in C.2 of arXiv:2506.07279 [quant-ph].
 
-from typing import List, Optional, Tuple
+from typing import List, Optional
 
 import numpy as np
 
