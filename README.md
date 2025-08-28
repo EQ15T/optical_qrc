@@ -12,7 +12,7 @@ pip install -e .
 
 ## Dependencies
 
-The code requires the following libraries: numpy (>= 1.22), matplotlib (>= 3.10), scikit-learn, pandas, pytest and tdqm. These dependencies are automatically installed when running ```pip install``.
+The code requires the following libraries: numpy (>= 1.22), matplotlib (>= 3.10), scikit-learn, pandas, pytest and tdqm. These dependencies are automatically installed when running ```pip install```.
 
 ## Instructions for reproducing results and figures
 
