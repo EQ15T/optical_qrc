@@ -5,7 +5,7 @@ This repository contains code for simulating the quantum reservoir computing pro
 ## Setup
 
 ```shell
-git clone https://github.com/roseopicta/optical_qrc.git
+git clone https://github.com/EQ15T/optical_qrc.git
 cd optical_qrc
 pip install -e .
 ```
@@ -26,7 +26,7 @@ The generated figures are saved in the ```results/figures``` and the raw datafra
 
 The run-time is at most 10 minutes per simulation on a recent desktop computer.
 
-The code also runs as a github continuous integration workflow, and the results are saved [here](https://github.com/roseopicta/optical_qrc/tree/results).
+The code also runs as a github continuous integration workflow, and the results are saved [here](https://github.com/EQ15T/optical_qrc/tree/results).
 
 ## Code organization
 
