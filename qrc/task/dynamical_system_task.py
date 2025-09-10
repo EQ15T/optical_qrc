@@ -41,7 +41,7 @@ class DynamicalSystemTask(AbstractTask):
     """
 
     def __init__(
-        self, fn: Callable[[np.ndarray], np.ndarray], closed_loop: bool = False
+        self, fn: Callable[[np.ndarray], np.ndarray], free_running: bool = False
     ):
         """
         Initialize the task.
@@ -49,12 +49,12 @@ class DynamicalSystemTask(AbstractTask):
         Args:
             fn (Callable[[np.ndarray], np.ndarray]): Function that returns a matrix of
                 samples from the dynamical system. Shape should be (num_samples, system_dimension).
-            closed_loop (bool, optional): If True, evaluation uses closed-loop (autoregressive)
+            free_running (bool, optional): If True, evaluation uses closed-loop (autoregressive)
                 mode. Defaults to False.
         """
         super().__init__()
         self._fn = fn
-        self._closed_loop = closed_loop
+        self._free_running = free_running
         self._ran = False
         self._trained = False
 
@@ -73,7 +73,7 @@ class DynamicalSystemTask(AbstractTask):
                 x[i, :] = r.step(input_vector)
         return x
 
-    def _simulate_closed_loop(self):
+    def _simulate_free_running(self):
         input_vector = self._first_input
         with logging_redirect_tqdm():
             for i in tqdm(
@@ -113,11 +113,11 @@ class DynamicalSystemTask(AbstractTask):
         self._num_repetitions = int(np.ceil(r.input_dimension / dimension))
         self._dimension = r.input_dimension
 
-        num_steps = num_washout + num_train if self._closed_loop else n
+        num_steps = num_washout + num_train if self._free_running else n
 
         x = self._simulate_reservoir(r, s, num_steps)
 
-        if self._closed_loop:
+        if self._free_running:
             self._x = np.zeros((num_train + num_test, r.output_dimension))
             self._x[:num_train, :] = x[num_washout:, :]
         else:
@@ -180,8 +180,8 @@ class DynamicalSystemTask(AbstractTask):
         # If closed-loop evaluation is chosen, the test samples are obtained
         # by letting the reservoir run in closed-loop mode, using the prediction
         # at one step as the input for the next step
-        if self._closed_loop:
-            self._simulate_closed_loop()
+        if self._free_running:
+            self._simulate_free_running()
 
         x = self._scaler.transform(self._x)
         y_true = self._y
