@@ -13,7 +13,8 @@ from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results/data", FILENAME + ".pkl")
 FIGURE_FILES = [
-    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext)
+    for ext in ["png", "pdf"]
 ]
 
 
@@ -118,7 +119,7 @@ def plot_reordered_correlation_matrices(df, N_values, axes, n=4, trial=0):
     return im
 
 
-def plot_results(df: pd.DataFrame, params_dicts: list):
+def plot_results(df: pd.DataFrame):
     plt.rcParams.update({"font.size": 9})
     fig = plt.figure(figsize=(10, 3))
 
@@ -146,4 +147,4 @@ if __name__ == "__main__":
         compute_results(N_values, num_trials)
 
     data = pd.read_pickle(RESULTS_FILE)
-    plot_results(data, N_values)
+    plot_results(data)

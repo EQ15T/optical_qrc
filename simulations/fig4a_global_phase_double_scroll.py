@@ -9,7 +9,8 @@ from qrc.task.dynamical_system_task import DynamicalSystemTask
 
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 FIGURE_FILES = [
-    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext)
+    for ext in ["png", "pdf"]
 ]
 
 

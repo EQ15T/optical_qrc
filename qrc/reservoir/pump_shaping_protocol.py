@@ -102,7 +102,7 @@ class PumpShapingProtocol(AbstractReservoir):
         self,
         frexel_delta_n: List[float],
         frexel_a_n: Optional[List[float]] = None,
-        gain: float = 1.7
+        gain: float = 1.7,
     ) -> np.ndarray:
         """
         Compute the covariance matrix for the PDC process.

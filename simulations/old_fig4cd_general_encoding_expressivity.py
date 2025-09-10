@@ -13,7 +13,8 @@ from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results/data", FILENAME + ".pkl")
 FIGURE_FILES = [
-    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext)
+    for ext in ["png", "pdf"]
 ]
 
 
