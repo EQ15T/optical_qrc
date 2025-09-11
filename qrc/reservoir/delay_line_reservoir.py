@@ -1,6 +1,8 @@
 # "Ideal" reservoir with polynomial non-linearity and memory.
+# Similar to the NVAR model described in https://www.nature.com/articles/s41467-021-25801-2
 
 import numpy as np
+from itertools import combinations_with_replacement
 
 from .abstract_reservoir import AbstractReservoir
 
@@ -9,17 +11,13 @@ class DelayLineReservoir(AbstractReservoir):
     """
     Ideal reservoir with polynomial nonlinearity and memory.
 
-    At each step, the reservoir computes polynomial features of the current
-    input and appends them to a delay line of length `tau`. The output is the
-    concatenation of all delayed polynomial features:
-
-        [x(n), x(n)^2, ..., x(n)^k,
-         x(n-1), x(n-1)^2, ..., x(n-1)^k,
-         ...
-         x(n-tau), ..., x(n-tau)^k]
+    Builds a feature vector composed of:
+    - O_lin: concatenation of delayed inputs
+    - O_nonlin: all polynomial features of O_lin, with degree >= 2
+    - O_total: concatenation of O_lin and O_nonlin
     """
 
-    def __init__(self, dimension: int, tau: int, max_degree: int):
+    def __init__(self, dimension: int, tau: int, max_degree: int = 1):
         """
         Initialize the delay-line reservoir.
 
@@ -33,6 +31,12 @@ class DelayLineReservoir(AbstractReservoir):
         self._tau = tau
         self._max_degree = max_degree
         self._ready = False
+        self._monomials = []
+        self._o_lin_dimension = dimension * (tau + 1)
+        for o in range(2, max_degree + 1):
+            self._monomials.extend(
+                list(combinations_with_replacement(range(self._o_lin_dimension), o))
+            )
 
     @property
     def input_dimension(self) -> int:
@@ -47,9 +51,8 @@ class DelayLineReservoir(AbstractReservoir):
         """
         Returns:
             int: Dimension of the output vector
-            = (tau + 1) × dimension × max_degree.
         """
-        return (self._tau + 1) * self._dimension * self._max_degree
+        return self._o_lin_dimension + len(self._monomials)
 
     def reset(self) -> None:
         """
@@ -58,7 +61,7 @@ class DelayLineReservoir(AbstractReservoir):
         Returns:
             None
         """
-        self._delay_line = np.zeros(self.output_dimension)
+        self._delay_line = np.zeros(self._o_lin_dimension)
         self._ready = True
 
     def step(self, s: np.ndarray) -> np.ndarray:
@@ -74,7 +77,13 @@ class DelayLineReservoir(AbstractReservoir):
         if not self._ready:
             raise ValueError("reset() must be called before feeding data")
 
-        powers = tuple(s ** (k + 1) for k in range(self._max_degree))
-        s_poly = np.concatenate(powers)
-        self._delay_line = np.concatenate((self._delay_line[len(s_poly) :], s_poly))
-        return self._delay_line
+        self._delay_line = np.concatenate((s, self._delay_line[: -self._dimension]))
+
+        o_lin = self._delay_line
+        if self._max_degree >= 2:
+            o_nonlin = np.array(
+                [np.prod(o_lin[list(idxs)]) for idxs in self._monomials]
+            )
+        else:
+            o_nonlin = np.array([])
+        return np.concatenate((o_lin, o_nonlin))
