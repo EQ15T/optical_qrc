@@ -69,6 +69,9 @@ class PumpShapingProtocol(AbstractReservoir):
         parametric_process: AbstractProcess,
         frexels_width: int = 130,
         use_xp_observables: bool = False,
+        alpha_scale: float = 1.0,
+        feedback_scale: float = 0.4,
+        gain: float = 1.7,
     ):
         """
         Initialize the PumpShapingProtocol.
@@ -95,14 +98,15 @@ class PumpShapingProtocol(AbstractReservoir):
         u = np.linspace(-1, 1, num_pump_frexels)
         self._gaussian_profile = np.exp(-(u**2))
 
+        self._gain = gain
+        self._alpha_scale = alpha_scale
+        self._feedback_scale = feedback_scale
+
         # Make sure that step() cannot be run before a call to reset()
         self._ready = False
 
     def _compute_covariance_matrix(
-        self,
-        frexel_delta_n: List[float],
-        frexel_a_n: Optional[List[float]] = None,
-        gain: float = 1.7,
+        self, frexel_delta_n: List[float], frexel_a_n: Optional[List[float]] = None
     ) -> np.ndarray:
         """
         Compute the covariance matrix for the PDC process.
@@ -115,8 +119,6 @@ class PumpShapingProtocol(AbstractReservoir):
             frexel_delta_n (list): frexel phase parameters.
             frexel_a_n (list, optional): Array representing frexel
                 amplitude parameters. If None, uses a Gaussian profile.
-            gain (float): Overall gain of the process (to match the target
-                squeezing level)
 
         Returns:
             np.ndarray: The computed covariance matrix.
@@ -127,7 +129,7 @@ class PumpShapingProtocol(AbstractReservoir):
 
         n = self._num_measured_frexels
         modes = result.modes[:, :n]
-        lambdas = gain * result.schmidt_coeffs[0:n]
+        lambdas = self._gain * result.schmidt_coeffs[0:n]
         d = np.diag(gaussian_utils.lambda_to_squeezing(lambdas))
         u = supermode_basis_to_frexel_basis(modes, n, self._frexels_width)
         s = gaussian_utils.complex_to_symplectic(u)
@@ -181,13 +183,15 @@ class PumpShapingProtocol(AbstractReservoir):
 
         if alpha is None:
             alpha = 2 * np.random.rand(N) - 1
+            alpha *= self._alpha_scale
 
         if beta is None:
             beta = 2 * np.random.rand(N) - 1
 
         if fb_mask is None:
             fb_mask = 2 * np.random.rand(N, n)
-            fb_mask = 0.4 * fb_mask / np.linalg.norm(fb_mask, 2)
+            fb_mask = fb_mask / np.linalg.norm(fb_mask, 2)
+            fb_mask *= self._feedback_scale
 
         self._alpha = alpha
         self._beta = beta
@@ -196,14 +200,13 @@ class PumpShapingProtocol(AbstractReservoir):
         self._scale = scale
         self._ready = True
 
-    def step(self, s: np.ndarray, gain: float = 1.7) -> np.ndarray:
+    def step(self, s: np.ndarray) -> np.ndarray:
         """
         Perform one reservoir update step by computing the covariance matrix
         for the modulated pump profile.
 
         Args:
             s (np.ndarray): Input vector of shape (num_pump_frexels,).
-            gain (float): Gain factor for squeezing strength.
 
         Returns:
             np.ndarray: Observable vector (upper-triangular covariance elements).
@@ -213,7 +216,7 @@ class PumpShapingProtocol(AbstractReservoir):
 
         n = self._num_measured_frexels
         d = self._scale * (self._beta + self._alpha * s + self._feedback)
-        sigma = self._compute_covariance_matrix(d.tolist(), gain=gain)
+        sigma = self._compute_covariance_matrix(d.tolist())
         sigma_x = sigma[:n, :n]
         if self._use_xp_observables:
             observables = sigma[np.triu_indices(2 * n)]
