@@ -1,10 +1,11 @@
 # A task consisting in predicting the dynamics of a system.
 
-from typing import Callable, List, NamedTuple, Optional
+from typing import Callable, List, NamedTuple, Optional, Union
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.linear_model import LinearRegression
+import scipy as sp
+from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.preprocessing import StandardScaler
 from tqdm.autonotebook import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
@@ -36,12 +37,15 @@ class DynamicalSystemTask(AbstractTask):
     A task consisting in predicting the evolution of a dynamical system, ie
     learning the state of the system at t+dt from the state at t.
 
-    Evaluation can be done in open-loop mode (feeding true states as input)
-    or closed-loop mode (feeding the reservoir’s predictions back as input).
+    Evaluation can be done in driven/open-loop mode (feeding true states as
+    input) or free-running/closed-loop mode (feeding the reservoir’s predictions
+    back as input).
     """
 
     def __init__(
-        self, fn: Callable[[np.ndarray], np.ndarray], free_running: bool = False
+        self,
+        fn: Union[Callable[[np.ndarray], np.ndarray], np.ndarray],
+        free_running: bool = False,
     ):
         """
         Initialize the task.
@@ -49,7 +53,8 @@ class DynamicalSystemTask(AbstractTask):
         Args:
             fn (Callable[[np.ndarray], np.ndarray]): Function that returns a matrix of
                 samples from the dynamical system. Shape should be (num_samples, system_dimension).
-            free_running (bool, optional): If True, evaluation uses closed-loop (autoregressive)
+                Can also be a numpy array with the precomputed samples.
+            free_running (bool, optional): If True, evaluation uses free-running (autoregressive)
                 mode. Defaults to False.
         """
         super().__init__()
@@ -99,12 +104,14 @@ class DynamicalSystemTask(AbstractTask):
         """
         n = num_washout + num_train + num_test
 
-        s = self._fn(n)
+        if type(self._fn) is np.ndarray:
+            s = self._fn[: (n + 1), :]
+        else:
+            s = self._fn(n)
         if s.shape[0] != (n + 1):
             raise ValueError(
                 "Wrong number of samples generated from the dynamical system"
             )
-
         dimension = 1 if len(s.shape) == 1 else s.shape[1]
 
         # if r.input_dimension % dimension != 0:
@@ -131,12 +138,13 @@ class DynamicalSystemTask(AbstractTask):
         self._ran = True
         self._trained = False
 
-    def train(self, train_subset: Optional[List] = None) -> None:
+    def train(self, train_subset: Optional[List] = None, alpha: float = 0.0) -> None:
         """
         Train the readout layer to predict the next state of the dynamical system.
 
         Args:
             train_subset (Optional[List[int]], optional): Subset of training indices. Defaults to None.
+            alpha (float): alpha parameter for Ridge regression. Linear regression is used if zero.
 
         Raises:
             ValueError: If `run()` has not been called yet.
@@ -153,7 +161,7 @@ class DynamicalSystemTask(AbstractTask):
         y_train = self._y[train_subset, :]
 
         scaler = StandardScaler()
-        model = LinearRegression()
+        model = Ridge(alpha=alpha) if alpha else LinearRegression()
         x_train = scaler.fit_transform(x_train)
         model.fit(x_train, y_train)
 
@@ -161,7 +169,9 @@ class DynamicalSystemTask(AbstractTask):
         self._model = model
         self._trained = True
 
-    def score(self, plot_results: bool = False) -> DynamicalSystemTaskResult:
+    def score(
+        self, plot_results: bool = False, spectral: bool = False
+    ) -> DynamicalSystemTaskResult:
         """
         Evaluate the trained model on the test data.
 
@@ -177,8 +187,8 @@ class DynamicalSystemTask(AbstractTask):
         if not self._trained:
             raise ValueError("Output layer not trained")
 
-        # If closed-loop evaluation is chosen, the test samples are obtained
-        # by letting the reservoir run in closed-loop mode, using the prediction
+        # If free running evaluation is chosen, the test samples are obtained
+        # by letting the reservoir run on its own, using the prediction
         # at one step as the input for the next step
         if self._free_running:
             self._simulate_free_running()
@@ -188,6 +198,24 @@ class DynamicalSystemTask(AbstractTask):
         y_pred = self._model.predict(x)
         y_pred_test = y_pred[self._num_train :]
         y_true_test = y_true[self._num_train :]
+        y_pred_test = y_pred_test[:, None] if y_pred_test.ndim == 1 else y_pred_test
+
+        if spectral:
+            n, dim = y_pred_test.shape
+            h = sp.signal.windows.hann(n)
+            y_pred_test_spectral = np.zeros((n // 2 + 1, dim))
+            y_true_test_spectral = np.zeros_like(y_pred_test_spectral)
+
+            standardize = lambda x: (x - x.mean()) / x.std()
+            for i in range(dim):
+                y_pred_test_spectral[:, i] = np.abs(
+                    np.fft.rfft(standardize(y_pred_test[:, i]) * h)
+                )
+                y_true_test_spectral[:, i] = np.abs(
+                    np.fft.rfft(standardize(y_true_test[:, i]) * h)
+                )
+            y_pred_test = y_pred_test_spectral
+            y_true_test = y_true_test_spectral
 
         corrcoeff = evaluation_metrics.correlation_coefficient(y_pred_test, y_true_test)
         nmse = evaluation_metrics.nmse(y_pred_test, y_true_test)
@@ -206,12 +234,12 @@ class DynamicalSystemTask(AbstractTask):
             axs[1].imshow(x[self._num_train :,].T)
 
             for j in range(y_pred.shape[1]):
-                axs[2 + j].plot(y_pred[self._num_train :, j], label="prediction")
-                axs[2 + j].plot(y_true[self._num_train :, j], label="true")
+                axs[2 + j].plot(y_pred_test[:, j], label="prediction")
+                axs[2 + j].plot(y_true_test[:, j], label="true")
                 axs[2 + j].set_xlabel("Timestep")
                 axs[2 + j].legend(bbox_to_anchor=(1.04, 0.5), loc="center left")
 
-            fig.suptitle(f"NMSE: {nmse:.2f}")
+            fig.suptitle(f"NMSE: {nmse:.4f}")
             plt.tight_layout()
 
         return DynamicalSystemTaskResult(nmse, corrcoeff, y_pred_test, y_true_test)
