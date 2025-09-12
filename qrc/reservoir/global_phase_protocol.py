@@ -63,7 +63,10 @@ class GlobalPhaseProtocol(AbstractReservoir):
 
     @staticmethod
     def _sigma_value(
-        theta: np.ndarray, noise_level: float, params: ReservoirParameters
+        theta: np.ndarray,
+        rng: np.random.RandomState,
+        noise_level: float,
+        params: ReservoirParameters,
     ) -> np.ndarray:
         """
         Compute the quadrature variance for a given total rotation theta, with optional Gaussian noise.
@@ -91,7 +94,7 @@ class GlobalPhaseProtocol(AbstractReservoir):
             )
             + params.d
         )
-        o += np.random.normal(loc=0, scale=noise_level, size=noise_dim)
+        o += rng.normal(loc=0, scale=noise_level, size=noise_dim)
         return o
 
     def _noisy_observables(
@@ -109,7 +112,12 @@ class GlobalPhaseProtocol(AbstractReservoir):
         """
         measured_quadrature_angle = [np.pi / 2, 0, np.pi / 4]
         return tuple(
-            self._sigma_value(phase + q, self._noise_level, self._reservoir_parameters)
+            self._sigma_value(
+                phase + q,
+                self._noise_rng,
+                self._noise_level,
+                self._reservoir_parameters,
+            )
             for q in measured_quadrature_angle
         )
 
@@ -139,23 +147,19 @@ class GlobalPhaseProtocol(AbstractReservoir):
         """
         N = self._num_copies
 
-        if params_seed is not None:
-            np.random.seed(params_seed)
+        params_rng = np.random.RandomState(params_seed)
 
         if alpha is None:
-            sign = 2 * np.random.randint(0, 2, size=N) - 1
-            magnitude = w + 0.5 * w * (2 * np.random.rand(N) - 1)
+            sign = 2 * params_rng.randint(0, 2, size=N) - 1
+            magnitude = w + 0.5 * w * (2 * params_rng.rand(N) - 1)
             alpha = sign * magnitude
 
         if fb_mask is None:
-            fb_mask = 2 * np.random.rand(N, N) - 1
+            fb_mask = 2 * params_rng.rand(N, N) - 1
             max_squeezing = 10 ** (max_squeezing_dB / 10)
             fb_mask = fb_mask / (np.linalg.norm(fb_mask, 2) * max_squeezing)
 
-        if noise_seed is not None:
-            # Set seed for future noise calculations
-            np.random.seed(noise_seed)
-
+        self._noise_rng = np.random.RandomState(noise_seed)
         self._alpha = alpha
         self._beta = beta
         self._fb_mask = fb_mask
