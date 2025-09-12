@@ -69,14 +69,14 @@ class RegressionTask(AbstractTask):
             num_test (int): Number of test steps.
             seed (Optional[int]): Random seed for reproducing the same input sequence.
         """
-        if seed is not None:
-            np.random.seed(seed)
+        # Create a local RNG owned by this function
+        rng = np.random.RandomState(seed)
 
         n = num_washout + num_train + num_test
         if self._binary:
-            s = np.random.randint(0, 2, size=(n,))
+            s = rng.randint(0, 2, size=n)  # random integers 0 or 1
         else:
-            s = 2 * np.random.rand(n) - 1
+            s = 2 * rng.random(n) - 1
 
         x = np.zeros((n, r.output_dimension))
 
