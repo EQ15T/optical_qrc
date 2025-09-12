@@ -1,5 +1,6 @@
 # A task consisting in predicting the dynamics of a system.
 
+import copy
 from typing import Callable, List, NamedTuple, Optional, Union
 
 import matplotlib.pyplot as plt
@@ -27,6 +28,8 @@ class DynamicalSystemTaskResult(NamedTuple):
     """
 
     nmse: float
+    psde: float
+    psde_emd: float
     corrcoeff: np.ndarray
     y_pred_test: np.ndarray
     y_true_test: np.ndarray
@@ -42,11 +45,7 @@ class DynamicalSystemTask(AbstractTask):
     back as input).
     """
 
-    def __init__(
-        self,
-        fn: Union[Callable[[np.ndarray], np.ndarray], np.ndarray],
-        free_running: bool = False,
-    ):
+    def __init__(self, fn: Union[Callable[[np.ndarray], np.ndarray], np.ndarray]):
         """
         Initialize the task.
 
@@ -54,12 +53,9 @@ class DynamicalSystemTask(AbstractTask):
             fn (Callable[[np.ndarray], np.ndarray]): Function that returns a matrix of
                 samples from the dynamical system. Shape should be (num_samples, system_dimension).
                 Can also be a numpy array with the precomputed samples.
-            free_running (bool, optional): If True, evaluation uses free-running (autoregressive)
-                mode. Defaults to False.
         """
         super().__init__()
         self._fn = fn
-        self._free_running = free_running
         self._ran = False
         self._trained = False
 
@@ -69,16 +65,20 @@ class DynamicalSystemTask(AbstractTask):
         return v
 
     def _simulate_reservoir(
-        self, r: AbstractReservoir, samples: np.ndarray, steps: int
+        self, r: AbstractReservoir, samples: np.ndarray, steps: int, checkpoint: int
     ) -> np.ndarray:
         x = np.zeros((steps, r.output_dimension))
+        checkpoint_copy = None
         with logging_redirect_tqdm():
             for i in tqdm(range(steps), desc="Reservoir simulation", leave=False):
+                if i == checkpoint:
+                    checkpoint_copy = copy.deepcopy(r)
                 input_vector = self._prepare_input_vector(samples[i, :])
                 x[i, :] = r.step(input_vector)
-        return x
+        return x, checkpoint_copy
 
     def _simulate_free_running(self):
+        r = copy.deepcopy(self._r_checkpoint)
         input_vector = self._first_input
         with logging_redirect_tqdm():
             for i in tqdm(
@@ -86,7 +86,7 @@ class DynamicalSystemTask(AbstractTask):
                 desc="Closed-loop reservoir simulation",
                 leave=False,
             ):
-                observables = self._r.step(self._prepare_input_vector(input_vector))
+                observables = r.step(self._prepare_input_vector(input_vector))
                 self._x[i + self._num_train, :] = observables
                 x_scaled = self._scaler.transform(observables.reshape(1, -1))
                 input_vector = self._model.predict(x_scaled)[0]
@@ -120,15 +120,9 @@ class DynamicalSystemTask(AbstractTask):
         self._num_repetitions = int(np.ceil(r.input_dimension / dimension))
         self._dimension = r.input_dimension
 
-        num_steps = num_washout + num_train if self._free_running else n
-
-        x = self._simulate_reservoir(r, s, num_steps)
-
-        if self._free_running:
-            self._x = np.zeros((num_train + num_test, r.output_dimension))
-            self._x[:num_train, :] = x[num_washout:, :]
-        else:
-            self._x = x[num_washout:, :]
+        x, r_chk = self._simulate_reservoir(r, s, n, num_washout + num_train)
+        self._x = x[num_washout:, :]
+        self._r_checkpoint = r_chk
 
         self._y = s[(num_washout + 1) :, :]  # shift for predicting next state
         self._num_train = num_train
@@ -170,7 +164,7 @@ class DynamicalSystemTask(AbstractTask):
         self._trained = True
 
     def score(
-        self, plot_results: bool = False, spectral: bool = False
+        self, free_running: bool = False, plot_results: bool = False
     ) -> DynamicalSystemTaskResult:
         """
         Evaluate the trained model on the test data.
@@ -187,38 +181,23 @@ class DynamicalSystemTask(AbstractTask):
         if not self._trained:
             raise ValueError("Output layer not trained")
 
-        # If free running evaluation is chosen, the test samples are obtained
+        # If free running evaluation is chosen, the test samples are re-computed
         # by letting the reservoir run on its own, using the prediction
         # at one step as the input for the next step
-        if self._free_running:
+        if free_running:
             self._simulate_free_running()
 
         x = self._scaler.transform(self._x)
         y_true = self._y
         y_pred = self._model.predict(x)
+        y_pred = y_pred[:, None] if y_pred.ndim == 1 else y_pred
+
         y_pred_test = y_pred[self._num_train :]
         y_true_test = y_true[self._num_train :]
-        y_pred_test = y_pred_test[:, None] if y_pred_test.ndim == 1 else y_pred_test
-
-        if spectral:
-            n, dim = y_pred_test.shape
-            h = sp.signal.windows.hann(n)
-            y_pred_test_spectral = np.zeros((n // 2 + 1, dim))
-            y_true_test_spectral = np.zeros_like(y_pred_test_spectral)
-
-            standardize = lambda x: (x - x.mean()) / x.std()
-            for i in range(dim):
-                y_pred_test_spectral[:, i] = np.abs(
-                    np.fft.rfft(standardize(y_pred_test[:, i]) * h)
-                )
-                y_true_test_spectral[:, i] = np.abs(
-                    np.fft.rfft(standardize(y_true_test[:, i]) * h)
-                )
-            y_pred_test = y_pred_test_spectral
-            y_true_test = y_true_test_spectral
 
         corrcoeff = evaluation_metrics.correlation_coefficient(y_pred_test, y_true_test)
         nmse = evaluation_metrics.nmse(y_pred_test, y_true_test)
+        psde_emd, psde = evaluation_metrics.spectral_distances(y_pred_test, y_true_test)
 
         if plot_results:
             max_num_observables = 4
@@ -242,4 +221,6 @@ class DynamicalSystemTask(AbstractTask):
             fig.suptitle(f"NMSE: {nmse:.4f}")
             plt.tight_layout()
 
-        return DynamicalSystemTaskResult(nmse, corrcoeff, y_pred_test, y_true_test)
+        return DynamicalSystemTaskResult(
+            nmse, psde, psde_emd, corrcoeff, y_pred_test, y_true_test
+        )
