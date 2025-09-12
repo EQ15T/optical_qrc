@@ -178,18 +178,18 @@ class PumpShapingProtocol(AbstractReservoir):
         """
         N = self._num_pump_frexels
         n = self._num_measured_frexels
-        if seed is not None:
-            np.random.seed(seed)
 
+        # Create a local RNG owned by this function
+        rng = np.random.RandomState(seed)
         if alpha is None:
-            alpha = 2 * np.random.rand(N) - 1
+            alpha = 2 * rng.random(N) - 1
             alpha *= self._alpha_scale
 
         if beta is None:
-            beta = 2 * np.random.rand(N) - 1
+            beta = 2 * rng.random(N) - 1
 
         if fb_mask is None:
-            fb_mask = 2 * np.random.rand(N, n)
+            fb_mask = 2 * rng.random((N, n))
             fb_mask = fb_mask / np.linalg.norm(fb_mask, 2)
             fb_mask *= self._feedback_scale
 
