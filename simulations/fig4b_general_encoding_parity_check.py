@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from tqdm.contrib.concurrent import thread_map
 
 from qrc.parametric_process.precomputed_process import ParametricProcess
 from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
@@ -20,34 +21,43 @@ FIGURE_FILES = [
 METRIC = "accuracy"
 
 
+def run_trial(pp, N, n, trial):
+    reservoir = PumpShapingProtocol(N, n, pp)
+    task = RegressionTask()
+
+    # Pump shaping parameters and random input sequence are seeded
+    # by the trial index for reproducible results.
+    reservoir.reset(seed=trial)
+    task.run(reservoir, num_washout=10, num_train=180, num_test=50, seed=trial)
+
+    saved_vars = ["N", "n", "trial", "tau", "accuracy", "corrcoeff"]
+    results = []
+    for tau in range(6):
+        task.train(partial(parity_check, tau=tau))
+        result = task.score()
+        accuracy, corrcoeff = result.accuracy, result.corrcoeff
+        d = {}
+        for name in saved_vars:
+            d[name] = locals()[name]
+        results.append(d)
+    return results
+
+
 def compute_results(params_dicts: dict, num_trials: int):
     results = []
-    saved_vars = ["N", "n", "trial", "tau", "accuracy", "corrcoeff"]
-
     pp = ParametricProcess("ktp_780nm_pdc")
-
     for params in tqdm(params_dicts, desc="Parameter sets"):
         N, n = params["N"], params["n"]
-        reservoir = PumpShapingProtocol(N, n, pp)
-
-        for trial in tqdm(range(num_trials), desc="Trial", leave=False):
-            task = RegressionTask()
-
-            # Pump shaping parameters and random input sequence are seeded
-            # by the trial index for reproducible results.
-            reservoir.reset(seed=trial)
-            task.run(reservoir, num_washout=10, num_train=180, num_test=50, seed=trial)
-
-            for tau in range(6):
-                task.train(partial(parity_check, tau=tau))
-                result = task.score()
-                accuracy, corrcoeff = result.accuracy, result.corrcoeff
-                # results.append({name: locals()[name] for name in saved_vars})
-                d = {}
-                for name in saved_vars:
-                    d[name] = locals()[name]
-                results.append(d)
-
+        results += sum(
+            thread_map(
+                lambda args: run_trial(*args),
+                [(pp, N, n, i) for i in range(num_trials)],
+                desc="Trial",
+                leave=False,
+                max_workers=None,
+            ),
+            [],
+        )
     df = pd.DataFrame(results)
     df.to_csv(RESULTS_FILE, index=False)
 
