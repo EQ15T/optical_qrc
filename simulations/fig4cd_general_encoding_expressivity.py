@@ -19,8 +19,8 @@ FIGURE_FILES = [
 
 
 def compute_ranks_and_correlations(N: int, n: int, trial: int, num_samples=50):
-    np.random.seed(hash((N, n, trial)) % (2**32 - 1))
-    inputs = np.tile(2 * np.random.rand(num_samples, 1), N)
+    rng = np.random.RandomState(hash((N, n, trial)) % (2**32 - 1))
+    inputs = np.tile(2 * rng.rand(num_samples, 1), N)
 
     pp = ParametricProcess("ktp_780nm_pdc")
     reservoir = PumpShapingProtocol(N, n, pp, use_xp_observables=True)
