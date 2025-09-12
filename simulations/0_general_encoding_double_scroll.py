@@ -15,7 +15,8 @@ from qrc.task.dynamical_system_task import DynamicalSystemTask
 FILENAME = os.path.basename(__file__.replace(".py", ""))
 RESULTS_FILE = os.path.join("results/data", FILENAME + ".csv")
 FIGURE_FILES = [
-    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext) for ext in ["png", "pdf"]
+    os.path.join(f"results/figures/{ext}", FILENAME + "." + ext)
+    for ext in ["png", "pdf"]
 ]
 METRIC = "NMSE"
 
@@ -36,9 +37,7 @@ def compute_results(params_dicts: dict, num_trials: int):
             trials = range(1)
 
         for trial in tqdm(trials, desc="Trial", leave=False):
-            task = DynamicalSystemTask(
-                partial(doublescroll, seconds_per_point=1.5), closed_loop=False
-            )
+            task = DynamicalSystemTask(partial(doublescroll, seconds_per_point=1.5))
             if reservoir == "pump shaping":
                 r.reset(seed=trial)
             else:
@@ -83,14 +82,11 @@ def plot_results(df):
 
 
 if __name__ == "__main__":
-    force_run = False
+    force_run = True
 
     num_trials = 10
     params_dicts = [
         {"reservoir": "delay line", "tau": 0, "degree": 1},
-        {"reservoir": "delay line", "tau": 1, "degree": 1},
-    }
-    params_dicts = [
         {"reservoir": "pump shaping", "N": 6, "n": 4},
         {"reservoir": "pump shaping", "N": 9, "n": 4},
         {"reservoir": "pump shaping", "N": 9, "n": 6},
