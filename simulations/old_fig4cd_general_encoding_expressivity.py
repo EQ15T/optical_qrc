@@ -20,12 +20,14 @@ FIGURE_FILES = [
 
 def compute_ranks_and_correlations(inputs, N: int, n: int, trial: int, num_samples=50):
     pp = ParametricProcess("ktp_780nm_pdc")
-    reservoir = PumpShapingProtocol(N, n, pp, use_xp_observables=True)
+    reservoir = PumpShapingProtocol(
+        N, n, pp, use_xp_observables=True, gain=1.72693881974
+    )
     reservoir.reset()
 
     observables = np.zeros((num_samples, reservoir.output_dimension))
     for i in tqdm(range(num_samples), desc="Reservoir simulation", leave=False):
-        observables[i, :] = reservoir.step(inputs[i, :], gain=1.72693881974)
+        observables[i, :] = reservoir.step(inputs[i, :])
 
     scaler = StandardScaler()
     observables = scaler.fit_transform(observables)
