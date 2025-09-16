@@ -99,6 +99,7 @@ class PumpShapingProtocol(AbstractReservoir):
         self._gaussian_profile = np.exp(-(u**2))
 
         self._gain = gain
+        self._output_scale = np.exp((1.7 - gain) * 0.5)
         self._alpha_scale = alpha_scale
         self._feedback_scale = feedback_scale
 
@@ -217,6 +218,8 @@ class PumpShapingProtocol(AbstractReservoir):
         n = self._num_measured_frexels
         d = self._scale * (self._beta + self._alpha * s + self._feedback)
         sigma = self._compute_covariance_matrix(d.tolist())
+        sigma *= self._output_scale
+
         sigma_x = sigma[:n, :n]
         if self._use_xp_observables:
             observables = sigma[np.triu_indices(2 * n)]
