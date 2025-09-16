@@ -121,3 +121,30 @@ def doublescroll(num_points: int, seconds_per_point: float = 1, dt: float = 0.1)
     solution = solve_ivp(doublescroll_step, (0, max_time), y0, t_eval=t, method="RK23")
 
     return solution.y[:, ::steps_per_point].T
+
+
+# Taken from: https://github.com/reservoirpy/reservoirpy/blob/master/reservoirpy/datasets/_chaos.py
+def lorenz63(
+    n_timesteps: int,
+    rho: float = 28.0,
+    sigma: float = 10.0,
+    beta: float = 8.0 / 3.0,
+    x0: list = [1.0, 1.0, 1.0],
+    h: float = 0.03,
+    standardize: bool = True,
+    **kwargs,
+) -> np.ndarray:
+    def lorenz_diff(t, state):
+        x, y, z = state
+        return sigma * (y - x), x * (rho - z) - y, x * y - beta * z
+
+    t_max = n_timesteps * h
+    t_eval = np.linspace(0.0, t_max, n_timesteps + 1)
+    solution = solve_ivp(
+        lorenz_diff, y0=x0, t_span=(0.0, t_max), t_eval=t_eval, **kwargs
+    )
+    solution = solution.y.T
+    if standardize:
+        # Scale for null mean and unit standard deviation.
+        solution = (solution - solution.mean(axis=0)) / solution.std(axis=0, ddof=0)
+    return solution
