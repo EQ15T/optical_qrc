@@ -15,6 +15,7 @@ from ..reservoir.abstract_reservoir import AbstractReservoir
 from . import evaluation_metrics
 from .abstract_task import AbstractTask
 
+from ..reservoir.long_short_term_memory import LongShortTermMemory
 
 class DynamicalSystemTaskResult(NamedTuple):
     """
@@ -120,9 +121,14 @@ class DynamicalSystemTask(AbstractTask):
         self._num_repetitions = int(np.ceil(r.input_dimension / dimension))
         self._dimension = r.input_dimension
 
-        x, r_chk = self._simulate_reservoir(r, s, n, num_washout + num_train)
-        self._x = x[num_washout:, :]
-        self._r_checkpoint = r_chk
+        if isinstance(r, LongShortTermMemory):
+            # LSTM is trained via backpropagation through time, no need to collect states
+            self._x = s[num_washout:, :] # Data for training is directly the input data
+            self._r_checkpoint = None # No checkpoint needed
+        else:
+            x, r_chk = self._simulate_reservoir(r, s, n, num_washout + num_train)
+            self._x = x[num_washout:, :]
+            self._r_checkpoint = r_chk
 
         self._y = s[(num_washout + 1) :, :]  # shift for predicting next state
         self._num_train = num_train
@@ -154,10 +160,16 @@ class DynamicalSystemTask(AbstractTask):
         x_train = self._x[train_subset, :]
         y_train = self._y[train_subset, :]
 
-        scaler = StandardScaler()
-        model = Ridge(alpha=alpha) if alpha else LinearRegression()
-        x_train = scaler.fit_transform(x_train)
-        model.fit(x_train, y_train)
+        if isinstance(self._r, LongShortTermMemory):
+            self._r.train(x_train, y_train)  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
+            scaler = None
+            model = None
+        else: 
+
+            scaler = StandardScaler()
+            model = Ridge(alpha=alpha) if alpha else LinearRegression()
+            x_train = scaler.fit_transform(x_train)
+            model.fit(x_train, y_train)
 
         self._scaler = scaler
         self._model = model
@@ -184,14 +196,18 @@ class DynamicalSystemTask(AbstractTask):
         # If free running evaluation is chosen, the test samples are re-computed
         # by letting the reservoir run on its own, using the prediction
         # at one step as the input for the next step
+        # Our LSTM implementation does not support this mode of evaluation
         if free_running:
             self._simulate_free_running()
 
-        x = self._scaler.transform(self._x)
-        y_true = self._y
-        y_pred = self._model.predict(x)
+        if isinstance(self._r, LongShortTermMemory):
+            y_pred = self._r.predict(self._x)  # Predict directly with the LSTM reservoir
+        else:
+            x = self._scaler.transform(self._x)
+            y_true = self._y
+            y_pred = self._model.predict(x)
+        
         y_pred = y_pred[:, None] if y_pred.ndim == 1 else y_pred
-
         y_pred_test = y_pred[self._num_train :]
         y_true_test = y_true[self._num_train :]
 
