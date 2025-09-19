@@ -6,13 +6,13 @@ from .abstract_reservoir import AbstractReservoir
 
 
 class LongShortTermMemory(AbstractReservoir):
-    def __init__(self, input_dim, out_dim, hidden_dim, epochs, lr, dr, seed=None, show_progress=True):
+    def __init__(self, input_dim, out_dim, hidden_dim, epochs, learning_rate, dropout_rate, seed=None, show_progress=True):
         super().__init__()
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
         self.out_dim = out_dim
-        self.dropout = dr
-        self.lr = lr
+        self.dropout = dropout_rate
+        self.lr = learning_rate
         self.epochs = epochs
         self.show_progress = show_progress
         
@@ -22,12 +22,17 @@ class LongShortTermMemory(AbstractReservoir):
         # Sequential model with single LSTM layer + Dense readout
         self.model = tf.keras.Sequential([
             tf.keras.layers.Input(shape=(None, input_dim)),  # None for sequence length
-            tf.keras.layers.LSTM(hidden_dim, return_sequences=True, dropout=dr, recurrent_dropout=dr),
+            tf.keras.layers.LSTM(
+                hidden_dim, 
+                return_sequences=True, 
+                dropout=self.dropout, 
+                recurrent_dropout=self.dropout
+            ),
             tf.keras.layers.Dense(out_dim)  # Linear readout
         ])
         
         self.model.compile(
-            optimizer=tf.keras.optimizers.Adam(learning_rate=lr),
+            optimizer=tf.keras.optimizers.Adam(learning_rate=self.lr),
             loss='mse'
         )
 
@@ -55,7 +60,31 @@ class LongShortTermMemory(AbstractReservoir):
         breakdown['total (Analytical)'] = total_params
 
         return breakdown
-        
+
+    def reset(self, seed=None):
+        """
+        Rebuild the full LSTM model from scratch.
+        """
+        if seed is not None:
+            tf.random.set_seed(seed)
+
+        self.model = tf.keras.Sequential([
+            tf.keras.layers.Input(shape=(None, self.input_dim)),
+            tf.keras.layers.LSTM(
+                self.hidden_dim,
+                return_sequences=True,
+                dropout=self.dropout,
+                recurrent_dropout=self.dropout
+            ),
+            tf.keras.layers.Dense(self.out_dim)
+        ])
+
+        self.model.compile(
+            optimizer=tf.keras.optimizers.Adam(learning_rate=self.lr),
+            loss='mse'
+        )
+        self._trained = False
+
     def train(self, x_train, y_train):
         if x_train.ndim == 1:
             x_train = x_train[:, None]
