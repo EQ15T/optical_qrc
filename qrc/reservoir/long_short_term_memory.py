@@ -61,6 +61,10 @@ class LongShortTermMemory(AbstractReservoir):
 
         return breakdown
 
+    def step(self, s: np.ndarray) -> np.ndarray:
+        """ Compatibility method, not used in LSTM context."""
+        return None # Not used in LSTM context
+    
     def reset(self, seed=None):
         """
         Rebuild the full LSTM model from scratch.
