@@ -1,6 +1,7 @@
 # A task consisting in predicting the dynamics of a system.
 
 import copy
+import sys
 from typing import Callable, List, NamedTuple, Optional, Union
 
 import matplotlib.pyplot as plt
@@ -123,16 +124,19 @@ class DynamicalSystemTask(AbstractTask):
 
         if isinstance(r, LongShortTermMemory):
             # LSTM is trained via backpropagation through time, no need to collect states
-            self._x = s[num_washout:, :] # Data for training is directly the input data
+            # Data for training is directly the input data
+            x = s[:-1, :] # Erase extra last point (we predict next state)
             self._r_checkpoint = None # No checkpoint needed
         else:
             x, r_chk = self._simulate_reservoir(r, s, n, num_washout + num_train)
-            self._x = x[num_washout:, :]
+            
             self._r_checkpoint = r_chk
 
+        self._x = x[num_washout:, :]
         self._y = s[(num_washout + 1) :, :]  # shift for predicting next state
         self._num_train = num_train
         self._num_test = num_test
+        self._num_washout = num_washout
         self._first_input = s[num_washout + num_train, :]
         self._r = r
         self._ran = True
@@ -156,6 +160,7 @@ class DynamicalSystemTask(AbstractTask):
         if train_subset[1] > self._num_train:
             raise ValueError("Incorrect training subset size")
 
+
         train_subset = slice(train_subset[0], train_subset[1])
         x_train = self._x[train_subset, :]
         y_train = self._y[train_subset, :]
@@ -165,11 +170,13 @@ class DynamicalSystemTask(AbstractTask):
             scaler = None
             model = None
         else: 
-
             scaler = StandardScaler()
             model = Ridge(alpha=alpha) if alpha else LinearRegression()
             x_train = scaler.fit_transform(x_train)
             model.fit(x_train, y_train)
+
+            n_params = model.coef_.size + (1 if model.intercept_ is not None else 0)
+            # print("Trainable parameters:", n_params)
 
         self._scaler = scaler
         self._model = model
@@ -204,9 +211,9 @@ class DynamicalSystemTask(AbstractTask):
             y_pred = self._r.predict(self._x)  # Predict directly with the LSTM reservoir
         else:
             x = self._scaler.transform(self._x)
-            y_true = self._y
             y_pred = self._model.predict(x)
-        
+
+        y_true = self._y
         y_pred = y_pred[:, None] if y_pred.ndim == 1 else y_pred
         y_pred_test = y_pred[self._num_train :]
         y_true_test = y_true[self._num_train :]
@@ -214,6 +221,7 @@ class DynamicalSystemTask(AbstractTask):
         corrcoeff = evaluation_metrics.correlation_coefficient(y_pred_test, y_true_test)
         nmse = evaluation_metrics.nmse(y_pred_test, y_true_test)
         psde_emd, psde = evaluation_metrics.spectral_distances(y_pred_test, y_true_test)
+        
 
         if plot_results:
             max_num_observables = 4
