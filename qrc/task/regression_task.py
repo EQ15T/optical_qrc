@@ -2,6 +2,7 @@
 
 from typing import Callable, List, NamedTuple, Optional
 
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.linear_model import LinearRegression, LogisticRegression
@@ -13,6 +14,7 @@ from ..reservoir.abstract_reservoir import AbstractReservoir
 from . import evaluation_metrics
 from .abstract_task import AbstractTask
 
+from ..reservoir.long_short_term_memory import LongShortTermMemory
 
 class RegressionTaskResult(NamedTuple):
     """
@@ -80,13 +82,20 @@ class RegressionTask(AbstractTask):
 
         x = np.zeros((n, r.output_dimension))
 
-        with logging_redirect_tqdm():
-            for i in tqdm(range(n), desc="Reservoir simulation", leave=False):
-                input_vector = np.tile(s[i], r.input_dimension)
-                x[i, :] = r.step(np.array(input_vector))
-
-        self._s = s
+        if isinstance(r, LongShortTermMemory):
+            # LSTM is trained via backpropagation through time, no need to collect states
+            # Reshaping from (timesteps,) to (timesteps, 1) for compatibility
+            x = s.reshape(-1, 1) # No extra last point in this type of task
+        else: 
+            with logging_redirect_tqdm():
+                # for i in tqdm(range(n), desc="Reservoir simulation", leave=False):
+                for i in range(n):
+                    input_vector = np.tile(s[i], r.input_dimension)
+                    x[i, :] = r.step(np.array(input_vector))
+        
         self._x = x[num_washout:, :]
+        self._s = s
+        self._r = r
         self._num_washout = num_washout
         self._num_train = num_train
         self._ran = True
@@ -121,10 +130,19 @@ class RegressionTask(AbstractTask):
         x_train = self._x[train_subset, :]
         y_train = fn(self._s)[self._num_washout :][train_subset]
 
-        scaler = StandardScaler()
-        model = model_cls()
-        x_train = scaler.fit_transform(x_train)
-        model.fit(x_train, y_train)
+        if isinstance(self._r, LongShortTermMemory):
+            self._r.train(x_train, y_train)  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
+            scaler = None
+            model = None
+        else: 
+            
+            scaler = StandardScaler()
+            model = model_cls()
+            x_train = scaler.fit_transform(x_train)
+            model.fit(x_train, y_train)
+
+            n_params = model.coef_.size + (1 if model.intercept_ is not None else 0)
+            # print("Trainable parameters:", n_params)
 
         self._scaler = scaler
         self._model = model
@@ -147,10 +165,15 @@ class RegressionTask(AbstractTask):
         if not self._trained:
             raise ValueError("Output layer not trained")
 
-        x = self._scaler.transform(self._x)
-        y_true = self._fn(self._s)[self._num_washout :]
-        y_pred = self._model.predict(x)
+        if isinstance(self._r, LongShortTermMemory):
+            y_pred = self._r.predict(self._x)  
+            y_pred = y_pred.reshape(-1) # Reshape from (timesteps, 1) to (timesteps,)
+        else:
+            x = self._scaler.transform(self._x)
+            
+            y_pred = self._model.predict(x)
 
+        y_true = self._fn(self._s)[self._num_washout :]
         y_pred_test = y_pred[self._num_train :]
         y_true_test = y_true[self._num_train :]
 
