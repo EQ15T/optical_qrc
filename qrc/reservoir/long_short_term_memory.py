@@ -4,6 +4,7 @@ from typing import Optional
 
 from .abstract_reservoir import AbstractReservoir
 
+tf.get_logger().setLevel('ERROR')
 
 class LongShortTermMemory(AbstractReservoir):
     def __init__(self, input_dim, out_dim, hidden_dim, epochs, learning_rate, dropout_rate, seed=None, show_progress=True):
@@ -21,20 +22,15 @@ class LongShortTermMemory(AbstractReservoir):
 
         # Sequential model with single LSTM layer + Dense readout
         self.model = tf.keras.Sequential([
-            tf.keras.layers.Input(shape=(None, input_dim)),  # None for sequence length
+            tf.keras.layers.Input(batch_shape=(1, None, input_dim)),
             tf.keras.layers.LSTM(
                 hidden_dim, 
                 return_sequences=True, 
                 dropout=self.dropout, 
-                recurrent_dropout=self.dropout
+                recurrent_dropout=self.dropout,
             ),
             tf.keras.layers.Dense(out_dim)  # Linear readout
         ])
-        
-        self.model.compile(
-            optimizer=tf.keras.optimizers.Adam(learning_rate=self.lr),
-            loss='mse'
-        )
 
     @property
     def input_dimension(self):
@@ -73,23 +69,24 @@ class LongShortTermMemory(AbstractReservoir):
             tf.random.set_seed(seed)
 
         self.model = tf.keras.Sequential([
-            tf.keras.layers.Input(shape=(None, self.input_dim)),
+            tf.keras.layers.Input(batch_shape=(1, None, self.input_dim)),
             tf.keras.layers.LSTM(
                 self.hidden_dim,
                 return_sequences=True,
                 dropout=self.dropout,
-                recurrent_dropout=self.dropout
+                recurrent_dropout=self.dropout,
             ),
             tf.keras.layers.Dense(self.out_dim)
         ])
 
-        self.model.compile(
-            optimizer=tf.keras.optimizers.Adam(learning_rate=self.lr),
-            loss='mse'
-        )
         self._trained = False
 
-    def train(self, x_train, y_train):
+    def train(self, x_train, y_train, washout=0):
+        self.model.compile(
+            optimizer=tf.keras.optimizers.Adam(learning_rate=self.lr),
+            loss='mse' # Standard MSE loss
+        )
+        
         if x_train.ndim == 1:
             x_train = x_train[:, None]
         if y_train.ndim == 1:
@@ -101,7 +98,8 @@ class LongShortTermMemory(AbstractReservoir):
         self.model.fit(
             x_train, y_train,
             epochs=self.epochs,
-            verbose=1 if self.show_progress else 0
+            verbose=1 if self.show_progress else 0,
+            batch_size=1,
         )
         self._trained = True
 
@@ -109,5 +107,6 @@ class LongShortTermMemory(AbstractReservoir):
         if x_seq.ndim == 1:
             x_seq = x_seq[:, None]
         x_seq = x_seq[None, :, :]  # batch dimension
-        y_pred = self.model.predict(x_seq, verbose=0)
+
+        y_pred = self.model.predict(x_seq, verbose=0, batch_size=1,)
         return y_pred[0]  # remove batch dimension
