@@ -110,3 +110,14 @@ class LongShortTermMemory(AbstractReservoir):
 
         y_pred = self.model.predict(x_seq, verbose=0, batch_size=1,)
         return y_pred[0]  # remove batch dimension
+
+    def get_config(self):
+        return {
+            "input_dim": self.input_dim,
+            "out_dim": self.out_dim,
+            "hidden_dim": self.hidden_dim,
+            "epochs": self.epochs,
+            "learning_rate": self.lr,
+            "dropout_rate": self.dropout,
+            "show_progress": self.show_progress,
+        }
