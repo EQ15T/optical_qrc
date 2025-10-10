@@ -8,7 +8,8 @@ version = "1.0.0"
 description = "Library and scripts for reproducing results from 'Experimental memory control in continuous variable optical quantum reservoir computing'"
 authors = [
   { name="Emilie Gillet", email="emilie.gillet@etu.sorbonne-universite.fr" },
-  { name="Iris Paparelle", email="iris.paparelle@lkb.upmc.fr" }
+  { name="Iris Paparelle", email="iris.paparelle@lkb.upmc.fr" },
+  { name="Daniel Montesinos", email="danielmontesinos@ifisc.uib-csic.es" }
 ]
 dependencies = [
   "numpy>=1.23",
@@ -17,7 +18,8 @@ dependencies = [
   "scikit-learn",
   "pandas",
   "tqdm",
-  "pytest"
+  "pytest",
+  "tensorflow>=2.2"
 ]
 requires-python = ">=3.10"
 
