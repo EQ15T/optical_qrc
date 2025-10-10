@@ -14,14 +14,12 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from tqdm.contrib.concurrent import thread_map
-from tqdm.contrib.concurrent import process_map
 
 from qrc.parametric_process.precomputed_process import ParametricProcess
 from qrc.reservoir import delay_line_reservoir as dl
 from qrc.reservoir import echo_state_network as esn
 from qrc.reservoir import long_short_term_memory as lstm
 
-# from qrc.reservoir import opa_feedback_reservoir as opa
 from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 from qrc.task.benchmarks import lorenz63, doublescroll
 from qrc.task.dynamical_system_task import DynamicalSystemTask
