@@ -16,7 +16,6 @@ from qrc.parametric_process.precomputed_process import ParametricProcess
 from qrc.reservoir import delay_line_reservoir as dl
 from qrc.reservoir import echo_state_network as esn
 
-# from qrc.reservoir import opa_feedback_reservoir as opa
 from qrc.reservoir.pump_shaping_protocol import PumpShapingProtocol
 from qrc.task.benchmarks import doublescroll, lorenz63
 from qrc.task.dynamical_system_task import DynamicalSystemTask
