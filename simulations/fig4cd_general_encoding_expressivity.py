@@ -22,7 +22,7 @@ def compute_ranks_and_correlations(N: int, n: int, trial: int, num_samples=50):
     rng = np.random.RandomState(hash((N, n, trial)) % (2**32 - 1))
     inputs = np.tile(2 * rng.rand(num_samples, 1), N)
 
-    pp = ParametricProcess("ktp_780nm_pdc")
+    pp = ParametricProcess("ktp_780nm_pdc", 180)
     reservoir = PumpShapingProtocol(N, n, pp, use_xp_observables=True)
     reservoir.reset()
 
