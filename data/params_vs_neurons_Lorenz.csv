@@ -1,0 +1,1051 @@
+label,trial,nmse,num_modes,dimension,dataset
+General Encoding,0,0.01834315155523646,4,10,Lorenz
+General Encoding,1,0.047620869744060046,4,10,Lorenz
+General Encoding,2,0.0028461326016248224,4,10,Lorenz
+General Encoding,3,0.016789666785349846,4,10,Lorenz
+General Encoding,4,0.02168328581699073,4,10,Lorenz
+General Encoding,5,0.0932757755648089,4,10,Lorenz
+General Encoding,6,0.017582754515725316,4,10,Lorenz
+General Encoding,7,0.07293296194312929,4,10,Lorenz
+General Encoding,8,0.04375802657709588,4,10,Lorenz
+General Encoding,9,0.13340109669149222,4,10,Lorenz
+General Encoding,10,0.24538401249150524,4,10,Lorenz
+General Encoding,11,0.17700026778236128,4,10,Lorenz
+General Encoding,12,0.055902554895279406,4,10,Lorenz
+General Encoding,13,0.36451098719171354,4,10,Lorenz
+General Encoding,14,0.08101577842766376,4,10,Lorenz
+General Encoding,15,0.1139696078191867,4,10,Lorenz
+General Encoding,16,0.011980123739673098,4,10,Lorenz
+General Encoding,17,0.12748191704157738,4,10,Lorenz
+General Encoding,18,0.0824705663304062,4,10,Lorenz
+General Encoding,19,0.02985233622544685,4,10,Lorenz
+General Encoding,20,0.0018888965799012517,4,10,Lorenz
+General Encoding,21,0.17122064859276087,4,10,Lorenz
+General Encoding,22,0.0010545209909599517,4,10,Lorenz
+General Encoding,23,0.041420654968715394,4,10,Lorenz
+General Encoding,24,0.07143027332294258,4,10,Lorenz
+General Encoding,0,0.0004859324995513664,6,21,Lorenz
+General Encoding,1,0.0010190805252296032,6,21,Lorenz
+General Encoding,2,1.3693154621217947e-05,6,21,Lorenz
+General Encoding,3,0.00047756252670644317,6,21,Lorenz
+General Encoding,4,0.0005170679037615368,6,21,Lorenz
+General Encoding,5,0.0013534696210347485,6,21,Lorenz
+General Encoding,6,4.355715008864658e-05,6,21,Lorenz
+General Encoding,7,0.00985248713837841,6,21,Lorenz
+General Encoding,8,0.0003038983485812112,6,21,Lorenz
+General Encoding,9,0.002047008285464379,6,21,Lorenz
+General Encoding,10,0.003015788000812174,6,21,Lorenz
+General Encoding,11,0.00431495385181868,6,21,Lorenz
+General Encoding,12,0.001034561694061608,6,21,Lorenz
+General Encoding,13,0.06236455676243899,6,21,Lorenz
+General Encoding,14,0.0007487582322848877,6,21,Lorenz
+General Encoding,15,0.0012206910441528208,6,21,Lorenz
+General Encoding,16,0.000638907823099381,6,21,Lorenz
+General Encoding,17,0.002911746788284117,6,21,Lorenz
+General Encoding,18,0.00023270836832331234,6,21,Lorenz
+General Encoding,19,0.0004536430259072683,6,21,Lorenz
+General Encoding,20,1.1391775114530679e-05,6,21,Lorenz
+General Encoding,21,0.00040145156648930245,6,21,Lorenz
+General Encoding,22,4.182019464579803e-06,6,21,Lorenz
+General Encoding,23,0.00019824297787470193,6,21,Lorenz
+General Encoding,24,0.0004121730403543714,6,21,Lorenz
+General Encoding,0,8.21407841869513e-06,8,36,Lorenz
+General Encoding,1,2.336644410796907e-05,8,36,Lorenz
+General Encoding,2,2.103988538788073e-06,8,36,Lorenz
+General Encoding,3,1.2285601565598611e-05,8,36,Lorenz
+General Encoding,4,1.358082404764861e-05,8,36,Lorenz
+General Encoding,5,5.428148035390252e-05,8,36,Lorenz
+General Encoding,6,2.3649668951839054e-06,8,36,Lorenz
+General Encoding,7,5.3160680799200215e-06,8,36,Lorenz
+General Encoding,8,5.590223054537328e-06,8,36,Lorenz
+General Encoding,9,0.00010930703202819104,8,36,Lorenz
+General Encoding,10,0.00011623145577012328,8,36,Lorenz
+General Encoding,11,4.8920111584536884e-05,8,36,Lorenz
+General Encoding,12,6.339729156247312e-06,8,36,Lorenz
+General Encoding,13,5.6081800809612945e-05,8,36,Lorenz
+General Encoding,14,3.760313057349463e-05,8,36,Lorenz
+General Encoding,15,1.1103854693241972e-05,8,36,Lorenz
+General Encoding,16,1.9785196599639977e-06,8,36,Lorenz
+General Encoding,17,8.283272724513859e-05,8,36,Lorenz
+General Encoding,18,9.271409877795919e-06,8,36,Lorenz
+General Encoding,19,6.511715730335102e-06,8,36,Lorenz
+General Encoding,20,2.3168712725541757e-06,8,36,Lorenz
+General Encoding,21,1.6229273514885572e-05,8,36,Lorenz
+General Encoding,22,1.97482742458384e-06,8,36,Lorenz
+General Encoding,23,3.289590316411041e-06,8,36,Lorenz
+General Encoding,24,4.305270398453692e-05,8,36,Lorenz
+General Encoding,0,2.42505650029298e-06,10,55,Lorenz
+General Encoding,1,3.2892963346206495e-06,10,55,Lorenz
+General Encoding,2,1.8541636981823626e-06,10,55,Lorenz
+General Encoding,3,2.8063483507368674e-06,10,55,Lorenz
+General Encoding,4,2.8842485375178116e-06,10,55,Lorenz
+General Encoding,5,2.22646041305578e-06,10,55,Lorenz
+General Encoding,6,2.129405917309597e-06,10,55,Lorenz
+General Encoding,7,2.413378403026284e-06,10,55,Lorenz
+General Encoding,8,1.8839603015796142e-06,10,55,Lorenz
+General Encoding,9,1.1514310511893938e-05,10,55,Lorenz
+General Encoding,10,1.640157017739747e-05,10,55,Lorenz
+General Encoding,11,5.795624205280354e-06,10,55,Lorenz
+General Encoding,12,2.441087175018883e-06,10,55,Lorenz
+General Encoding,13,1.4272768774162004e-05,10,55,Lorenz
+General Encoding,14,3.2095883223856235e-06,10,55,Lorenz
+General Encoding,15,1.899391003409674e-06,10,55,Lorenz
+General Encoding,16,1.8706245607599777e-06,10,55,Lorenz
+General Encoding,17,2.534743777770508e-06,10,55,Lorenz
+General Encoding,18,1.986485804403933e-06,10,55,Lorenz
+General Encoding,19,2.9884722422486768e-06,10,55,Lorenz
+General Encoding,20,1.7124553343806135e-06,10,55,Lorenz
+General Encoding,21,2.590507978819278e-06,10,55,Lorenz
+General Encoding,22,2.138815297487697e-06,10,55,Lorenz
+General Encoding,23,2.39082493113428e-06,10,55,Lorenz
+General Encoding,24,5.576220958099022e-06,10,55,Lorenz
+General Encoding,0,3.8044957501388463e-06,12,78,Lorenz
+General Encoding,1,2.4694401504680308e-06,12,78,Lorenz
+General Encoding,2,1.9493570256471944e-06,12,78,Lorenz
+General Encoding,3,3.8969401765344625e-06,12,78,Lorenz
+General Encoding,4,1.0833353149583852e-05,12,78,Lorenz
+General Encoding,5,1.7995638147301643e-06,12,78,Lorenz
+General Encoding,6,2.6287160215724053e-06,12,78,Lorenz
+General Encoding,7,1.4929065492246008e-06,12,78,Lorenz
+General Encoding,8,1.9452881059998192e-06,12,78,Lorenz
+General Encoding,9,1.3095313726729278e-05,12,78,Lorenz
+General Encoding,10,3.611769440661099e-06,12,78,Lorenz
+General Encoding,11,4.903934337619009e-06,12,78,Lorenz
+General Encoding,12,2.4444946942928054e-06,12,78,Lorenz
+General Encoding,13,3.095843236130457e-06,12,78,Lorenz
+General Encoding,14,2.866413837331201e-06,12,78,Lorenz
+General Encoding,15,2.5828845961527657e-06,12,78,Lorenz
+General Encoding,16,2.0810120526684023e-06,12,78,Lorenz
+General Encoding,17,4.744375754645328e-06,12,78,Lorenz
+General Encoding,18,2.26763513133321e-06,12,78,Lorenz
+General Encoding,19,4.279299173027465e-06,12,78,Lorenz
+General Encoding,20,2.6086868593187414e-06,12,78,Lorenz
+General Encoding,21,3.03707024770041e-06,12,78,Lorenz
+General Encoding,22,1.982970368026696e-06,12,78,Lorenz
+General Encoding,23,1.7743763349457585e-06,12,78,Lorenz
+General Encoding,24,1.3914957144062505e-05,12,78,Lorenz
+General Encoding,0,3.288924049682915e-06,14,105,Lorenz
+General Encoding,1,1.5238763633757259e-05,14,105,Lorenz
+General Encoding,2,1.253282400629608e-06,14,105,Lorenz
+General Encoding,3,1.878286717848003e-06,14,105,Lorenz
+General Encoding,4,1.7216938282115384e-05,14,105,Lorenz
+General Encoding,5,2.2813747253672705e-06,14,105,Lorenz
+General Encoding,6,2.0882272109549115e-06,14,105,Lorenz
+General Encoding,7,1.2422380163581336e-06,14,105,Lorenz
+General Encoding,8,2.22244653874273e-06,14,105,Lorenz
+General Encoding,9,6.259241336749545e-06,14,105,Lorenz
+General Encoding,10,2.704447578661083e-06,14,105,Lorenz
+General Encoding,11,5.415943943152682e-06,14,105,Lorenz
+General Encoding,12,2.234163303123704e-06,14,105,Lorenz
+General Encoding,13,8.756604852545827e-06,14,105,Lorenz
+General Encoding,14,2.9121304662537417e-06,14,105,Lorenz
+General Encoding,15,1.596615566959156e-05,14,105,Lorenz
+General Encoding,16,1.8045869934653082e-06,14,105,Lorenz
+General Encoding,17,2.0702137278990395e-06,14,105,Lorenz
+General Encoding,18,1.7759427578028003e-06,14,105,Lorenz
+General Encoding,19,2.506793137466027e-06,14,105,Lorenz
+General Encoding,20,3.2792204703414134e-06,14,105,Lorenz
+General Encoding,21,2.1351196476904766e-06,14,105,Lorenz
+General Encoding,22,1.2496334130364354e-06,14,105,Lorenz
+General Encoding,23,2.312164613151978e-06,14,105,Lorenz
+General Encoding,24,7.080349263269333e-06,14,105,Lorenz
+best ESN fixedNeurons,0,0.03250253222195772,4,4,Lorenz
+best ESN fixedNeurons,1,0.04346499410145525,4,4,Lorenz
+best ESN fixedNeurons,2,0.04194229331299909,4,4,Lorenz
+best ESN fixedNeurons,3,0.050930875236215103,4,4,Lorenz
+best ESN fixedNeurons,4,0.07693481160974758,4,4,Lorenz
+best ESN fixedNeurons,5,0.10974810598189781,4,4,Lorenz
+best ESN fixedNeurons,6,0.027700215448086443,4,4,Lorenz
+best ESN fixedNeurons,7,0.06624300652238702,4,4,Lorenz
+best ESN fixedNeurons,8,0.03362078972245491,4,4,Lorenz
+best ESN fixedNeurons,9,0.07870942177380458,4,4,Lorenz
+best ESN fixedNeurons,10,0.036699379636005995,4,4,Lorenz
+best ESN fixedNeurons,11,0.07324890350444532,4,4,Lorenz
+best ESN fixedNeurons,12,0.03730427012045752,4,4,Lorenz
+best ESN fixedNeurons,13,0.08565172834538216,4,4,Lorenz
+best ESN fixedNeurons,14,0.09216929809496051,4,4,Lorenz
+best ESN fixedNeurons,15,0.02540828054636451,4,4,Lorenz
+best ESN fixedNeurons,16,0.061072926094104696,4,4,Lorenz
+best ESN fixedNeurons,17,0.0409630934423197,4,4,Lorenz
+best ESN fixedNeurons,18,0.12207197532017079,4,4,Lorenz
+best ESN fixedNeurons,19,0.01348386659037872,4,4,Lorenz
+best ESN fixedNeurons,20,0.1799653998324611,4,4,Lorenz
+best ESN fixedNeurons,21,0.03439043191643918,4,4,Lorenz
+best ESN fixedNeurons,22,0.0993520145697504,4,4,Lorenz
+best ESN fixedNeurons,23,0.039538317470965284,4,4,Lorenz
+best ESN fixedNeurons,24,0.11524494100709391,4,4,Lorenz
+best ESN fixedNeurons,0,0.021155920940503562,6,6,Lorenz
+best ESN fixedNeurons,1,0.017563472713567348,6,6,Lorenz
+best ESN fixedNeurons,2,0.03224617295687994,6,6,Lorenz
+best ESN fixedNeurons,3,0.007497547963681681,6,6,Lorenz
+best ESN fixedNeurons,4,0.019482143476113767,6,6,Lorenz
+best ESN fixedNeurons,5,0.028744647854641366,6,6,Lorenz
+best ESN fixedNeurons,6,0.0058322036410379165,6,6,Lorenz
+best ESN fixedNeurons,7,0.016101267814432236,6,6,Lorenz
+best ESN fixedNeurons,8,0.024184977288258528,6,6,Lorenz
+best ESN fixedNeurons,9,0.03833652362873929,6,6,Lorenz
+best ESN fixedNeurons,10,0.018044273311019918,6,6,Lorenz
+best ESN fixedNeurons,11,0.016428491903467162,6,6,Lorenz
+best ESN fixedNeurons,12,0.017671611757829355,6,6,Lorenz
+best ESN fixedNeurons,13,0.016658798286582316,6,6,Lorenz
+best ESN fixedNeurons,14,0.005680914864614035,6,6,Lorenz
+best ESN fixedNeurons,15,0.011740337482546697,6,6,Lorenz
+best ESN fixedNeurons,16,0.030474865415551968,6,6,Lorenz
+best ESN fixedNeurons,17,0.025074256076384853,6,6,Lorenz
+best ESN fixedNeurons,18,0.02038697913892324,6,6,Lorenz
+best ESN fixedNeurons,19,0.020531001066252205,6,6,Lorenz
+best ESN fixedNeurons,20,0.007953386669837883,6,6,Lorenz
+best ESN fixedNeurons,21,0.02327892162144239,6,6,Lorenz
+best ESN fixedNeurons,22,0.008280825627497311,6,6,Lorenz
+best ESN fixedNeurons,23,0.022418556124439718,6,6,Lorenz
+best ESN fixedNeurons,24,0.03204634273999581,6,6,Lorenz
+best ESN fixedNeurons,0,0.011100455546288964,8,8,Lorenz
+best ESN fixedNeurons,1,0.005657098335864338,8,8,Lorenz
+best ESN fixedNeurons,2,0.004669960728253442,8,8,Lorenz
+best ESN fixedNeurons,3,0.03768615973193175,8,8,Lorenz
+best ESN fixedNeurons,4,0.006845149801948891,8,8,Lorenz
+best ESN fixedNeurons,5,0.012490528154991014,8,8,Lorenz
+best ESN fixedNeurons,6,0.009033602180634774,8,8,Lorenz
+best ESN fixedNeurons,7,0.00564137371793845,8,8,Lorenz
+best ESN fixedNeurons,8,0.019309232152144216,8,8,Lorenz
+best ESN fixedNeurons,9,0.005273075468791105,8,8,Lorenz
+best ESN fixedNeurons,10,0.03283533512201544,8,8,Lorenz
+best ESN fixedNeurons,11,0.00353964242880738,8,8,Lorenz
+best ESN fixedNeurons,12,0.00894289171886077,8,8,Lorenz
+best ESN fixedNeurons,13,0.009808641472983043,8,8,Lorenz
+best ESN fixedNeurons,14,0.0018526089816104242,8,8,Lorenz
+best ESN fixedNeurons,15,0.015249858146696642,8,8,Lorenz
+best ESN fixedNeurons,16,0.005634475099921612,8,8,Lorenz
+best ESN fixedNeurons,17,0.013003752003831323,8,8,Lorenz
+best ESN fixedNeurons,18,0.010890221375913922,8,8,Lorenz
+best ESN fixedNeurons,19,0.00475084842436573,8,8,Lorenz
+best ESN fixedNeurons,20,0.017128252539150103,8,8,Lorenz
+best ESN fixedNeurons,21,0.0036411042030436657,8,8,Lorenz
+best ESN fixedNeurons,22,0.01468019378468384,8,8,Lorenz
+best ESN fixedNeurons,23,0.01083516354979107,8,8,Lorenz
+best ESN fixedNeurons,24,0.011225414620246874,8,8,Lorenz
+best ESN fixedNeurons,0,0.0045922053376531435,10,10,Lorenz
+best ESN fixedNeurons,1,0.006209444531741106,10,10,Lorenz
+best ESN fixedNeurons,2,0.007424402114297129,10,10,Lorenz
+best ESN fixedNeurons,3,0.003546802572311424,10,10,Lorenz
+best ESN fixedNeurons,4,0.0024388840626329428,10,10,Lorenz
+best ESN fixedNeurons,5,0.006642824056396568,10,10,Lorenz
+best ESN fixedNeurons,6,0.002575360202600363,10,10,Lorenz
+best ESN fixedNeurons,7,0.006375368465816644,10,10,Lorenz
+best ESN fixedNeurons,8,0.005624694991496496,10,10,Lorenz
+best ESN fixedNeurons,9,0.006401910447381576,10,10,Lorenz
+best ESN fixedNeurons,10,0.006483391818093148,10,10,Lorenz
+best ESN fixedNeurons,11,0.009968330893653704,10,10,Lorenz
+best ESN fixedNeurons,12,0.002563336577991918,10,10,Lorenz
+best ESN fixedNeurons,13,0.005110818670237304,10,10,Lorenz
+best ESN fixedNeurons,14,0.010286380949630563,10,10,Lorenz
+best ESN fixedNeurons,15,0.0025407363416507355,10,10,Lorenz
+best ESN fixedNeurons,16,0.004175036803374682,10,10,Lorenz
+best ESN fixedNeurons,17,0.01421767177898832,10,10,Lorenz
+best ESN fixedNeurons,18,0.002697145058407865,10,10,Lorenz
+best ESN fixedNeurons,19,0.015719554724376538,10,10,Lorenz
+best ESN fixedNeurons,20,0.009587847457295648,10,10,Lorenz
+best ESN fixedNeurons,21,0.004675031664440208,10,10,Lorenz
+best ESN fixedNeurons,22,0.002701759615298727,10,10,Lorenz
+best ESN fixedNeurons,23,0.019511263185472884,10,10,Lorenz
+best ESN fixedNeurons,24,0.0038044134115493896,10,10,Lorenz
+best ESN fixedNeurons,0,0.0010616395543775956,12,12,Lorenz
+best ESN fixedNeurons,1,0.0018312766425539078,12,12,Lorenz
+best ESN fixedNeurons,2,0.0011811480999058843,12,12,Lorenz
+best ESN fixedNeurons,3,0.01361316225689088,12,12,Lorenz
+best ESN fixedNeurons,4,0.004418612703397341,12,12,Lorenz
+best ESN fixedNeurons,5,0.003926047715391101,12,12,Lorenz
+best ESN fixedNeurons,6,0.0022301983408173297,12,12,Lorenz
+best ESN fixedNeurons,7,0.000766420566410891,12,12,Lorenz
+best ESN fixedNeurons,8,0.0020810622565307826,12,12,Lorenz
+best ESN fixedNeurons,9,0.0019452075084785822,12,12,Lorenz
+best ESN fixedNeurons,10,0.0018326855435304922,12,12,Lorenz
+best ESN fixedNeurons,11,0.0010803538950318876,12,12,Lorenz
+best ESN fixedNeurons,12,0.002562613786492801,12,12,Lorenz
+best ESN fixedNeurons,13,0.002888957204127576,12,12,Lorenz
+best ESN fixedNeurons,14,0.0023364946883708865,12,12,Lorenz
+best ESN fixedNeurons,15,0.0018267331700185724,12,12,Lorenz
+best ESN fixedNeurons,16,0.004470453134441461,12,12,Lorenz
+best ESN fixedNeurons,17,0.001557499115056763,12,12,Lorenz
+best ESN fixedNeurons,18,0.00932551471240711,12,12,Lorenz
+best ESN fixedNeurons,19,0.004530436773660978,12,12,Lorenz
+best ESN fixedNeurons,20,0.002525642797429223,12,12,Lorenz
+best ESN fixedNeurons,21,0.004726859992973718,12,12,Lorenz
+best ESN fixedNeurons,22,0.0011225441682712121,12,12,Lorenz
+best ESN fixedNeurons,23,0.0010503744366906727,12,12,Lorenz
+best ESN fixedNeurons,24,0.0004816180955773793,12,12,Lorenz
+best ESN fixedNeurons,0,0.0010291855987326008,14,14,Lorenz
+best ESN fixedNeurons,1,0.0013443672516425934,14,14,Lorenz
+best ESN fixedNeurons,2,0.00274401241066522,14,14,Lorenz
+best ESN fixedNeurons,3,0.001948476916427253,14,14,Lorenz
+best ESN fixedNeurons,4,0.0020841854958479275,14,14,Lorenz
+best ESN fixedNeurons,5,0.0019260713500433284,14,14,Lorenz
+best ESN fixedNeurons,6,0.0024493669585816387,14,14,Lorenz
+best ESN fixedNeurons,7,0.001386881716375125,14,14,Lorenz
+best ESN fixedNeurons,8,0.0022600551747332864,14,14,Lorenz
+best ESN fixedNeurons,9,0.0028139161011358975,14,14,Lorenz
+best ESN fixedNeurons,10,0.0033651850304497097,14,14,Lorenz
+best ESN fixedNeurons,11,0.0017504519700975113,14,14,Lorenz
+best ESN fixedNeurons,12,0.0026512968682644252,14,14,Lorenz
+best ESN fixedNeurons,13,0.000951245991573798,14,14,Lorenz
+best ESN fixedNeurons,14,0.0018086260821664495,14,14,Lorenz
+best ESN fixedNeurons,15,0.001614053986632293,14,14,Lorenz
+best ESN fixedNeurons,16,0.001928377024398028,14,14,Lorenz
+best ESN fixedNeurons,17,0.001457700692344018,14,14,Lorenz
+best ESN fixedNeurons,18,0.002468242928320032,14,14,Lorenz
+best ESN fixedNeurons,19,0.0009358777049295084,14,14,Lorenz
+best ESN fixedNeurons,20,0.004222709996876,14,14,Lorenz
+best ESN fixedNeurons,21,0.0011682055379200747,14,14,Lorenz
+best ESN fixedNeurons,22,0.003847414646202469,14,14,Lorenz
+best ESN fixedNeurons,23,0.001694142717810692,14,14,Lorenz
+best ESN fixedNeurons,24,0.0008746201410068991,14,14,Lorenz
+best ESN fixedParams,0,0.0045922053376531435,10,10,Lorenz
+best ESN fixedParams,1,0.006209444531741106,10,10,Lorenz
+best ESN fixedParams,2,0.007424402114297129,10,10,Lorenz
+best ESN fixedParams,3,0.003546802572311424,10,10,Lorenz
+best ESN fixedParams,4,0.0024388840626329428,10,10,Lorenz
+best ESN fixedParams,5,0.006642824056396568,10,10,Lorenz
+best ESN fixedParams,6,0.002575360202600363,10,10,Lorenz
+best ESN fixedParams,7,0.006375368465816644,10,10,Lorenz
+best ESN fixedParams,8,0.005624694991496496,10,10,Lorenz
+best ESN fixedParams,9,0.006401910447381576,10,10,Lorenz
+best ESN fixedParams,10,0.006483391818093148,10,10,Lorenz
+best ESN fixedParams,11,0.009968330893653704,10,10,Lorenz
+best ESN fixedParams,12,0.002563336577991918,10,10,Lorenz
+best ESN fixedParams,13,0.005110818670237304,10,10,Lorenz
+best ESN fixedParams,14,0.010286380949630563,10,10,Lorenz
+best ESN fixedParams,15,0.0025407363416507355,10,10,Lorenz
+best ESN fixedParams,16,0.004175036803374682,10,10,Lorenz
+best ESN fixedParams,17,0.01421767177898832,10,10,Lorenz
+best ESN fixedParams,18,0.002697145058407865,10,10,Lorenz
+best ESN fixedParams,19,0.015719554724376538,10,10,Lorenz
+best ESN fixedParams,20,0.009587847457295648,10,10,Lorenz
+best ESN fixedParams,21,0.004675031664440208,10,10,Lorenz
+best ESN fixedParams,22,0.002701759615298727,10,10,Lorenz
+best ESN fixedParams,23,0.019511263185472884,10,10,Lorenz
+best ESN fixedParams,24,0.0038044134115493896,10,10,Lorenz
+best ESN fixedParams,0,0.00015940584363451448,21,21,Lorenz
+best ESN fixedParams,1,0.0004568958361083963,21,21,Lorenz
+best ESN fixedParams,2,0.0004932012208776074,21,21,Lorenz
+best ESN fixedParams,3,0.0005737254963168306,21,21,Lorenz
+best ESN fixedParams,4,0.00045062442715628116,21,21,Lorenz
+best ESN fixedParams,5,0.0004473129184735837,21,21,Lorenz
+best ESN fixedParams,6,0.00034840173637581257,21,21,Lorenz
+best ESN fixedParams,7,0.0007558607634713074,21,21,Lorenz
+best ESN fixedParams,8,0.0001944696205622846,21,21,Lorenz
+best ESN fixedParams,9,0.0005334144635674009,21,21,Lorenz
+best ESN fixedParams,10,0.00045164742078338774,21,21,Lorenz
+best ESN fixedParams,11,0.002109051376987907,21,21,Lorenz
+best ESN fixedParams,12,0.00017201458092291208,21,21,Lorenz
+best ESN fixedParams,13,0.0006133373316015504,21,21,Lorenz
+best ESN fixedParams,14,0.0011034180292622136,21,21,Lorenz
+best ESN fixedParams,15,0.0015195651686337288,21,21,Lorenz
+best ESN fixedParams,16,0.0004748602817344669,21,21,Lorenz
+best ESN fixedParams,17,0.0013579316836187917,21,21,Lorenz
+best ESN fixedParams,18,0.0006125443483876157,21,21,Lorenz
+best ESN fixedParams,19,0.000308966732861346,21,21,Lorenz
+best ESN fixedParams,20,0.00023737528116477385,21,21,Lorenz
+best ESN fixedParams,21,0.0004089893033789613,21,21,Lorenz
+best ESN fixedParams,22,0.0008427216366075889,21,21,Lorenz
+best ESN fixedParams,23,0.0006574800202183064,21,21,Lorenz
+best ESN fixedParams,24,0.00044680515881636695,21,21,Lorenz
+best ESN fixedParams,0,5.001587842125722e-05,36,36,Lorenz
+best ESN fixedParams,1,5.917547466586233e-05,36,36,Lorenz
+best ESN fixedParams,2,9.470767349735176e-05,36,36,Lorenz
+best ESN fixedParams,3,4.1091342427322713e-05,36,36,Lorenz
+best ESN fixedParams,4,4.181520954064706e-05,36,36,Lorenz
+best ESN fixedParams,5,4.3231257460607473e-05,36,36,Lorenz
+best ESN fixedParams,6,4.744859689475021e-05,36,36,Lorenz
+best ESN fixedParams,7,1.9384789039984554e-05,36,36,Lorenz
+best ESN fixedParams,8,1.8076471243432955e-05,36,36,Lorenz
+best ESN fixedParams,9,9.434599834863184e-06,36,36,Lorenz
+best ESN fixedParams,10,1.714270827278987e-05,36,36,Lorenz
+best ESN fixedParams,11,0.00011481859500663295,36,36,Lorenz
+best ESN fixedParams,12,7.368565041782553e-05,36,36,Lorenz
+best ESN fixedParams,13,4.142910980290299e-05,36,36,Lorenz
+best ESN fixedParams,14,6.716466033742296e-05,36,36,Lorenz
+best ESN fixedParams,15,3.863792982745138e-05,36,36,Lorenz
+best ESN fixedParams,16,1.652051820524484e-05,36,36,Lorenz
+best ESN fixedParams,17,1.940170603236776e-05,36,36,Lorenz
+best ESN fixedParams,18,3.504743889210097e-05,36,36,Lorenz
+best ESN fixedParams,19,2.540399991894518e-05,36,36,Lorenz
+best ESN fixedParams,20,1.7681731432781684e-05,36,36,Lorenz
+best ESN fixedParams,21,1.6493801098579094e-05,36,36,Lorenz
+best ESN fixedParams,22,2.6439013498387353e-05,36,36,Lorenz
+best ESN fixedParams,23,7.738963020566463e-05,36,36,Lorenz
+best ESN fixedParams,24,8.392517952247376e-05,36,36,Lorenz
+best ESN fixedParams,0,5.971575202728961e-06,55,55,Lorenz
+best ESN fixedParams,1,4.765496237745651e-06,55,55,Lorenz
+best ESN fixedParams,2,5.91677930511308e-06,55,55,Lorenz
+best ESN fixedParams,3,8.341866006207295e-06,55,55,Lorenz
+best ESN fixedParams,4,4.1764957631671905e-06,55,55,Lorenz
+best ESN fixedParams,5,4.9218921882707484e-06,55,55,Lorenz
+best ESN fixedParams,6,5.755738436776329e-06,55,55,Lorenz
+best ESN fixedParams,7,1.015787376310774e-05,55,55,Lorenz
+best ESN fixedParams,8,5.0750135168859186e-06,55,55,Lorenz
+best ESN fixedParams,9,6.273468585361001e-06,55,55,Lorenz
+best ESN fixedParams,10,5.0422128441183925e-06,55,55,Lorenz
+best ESN fixedParams,11,5.009733577119025e-06,55,55,Lorenz
+best ESN fixedParams,12,4.642578628242988e-06,55,55,Lorenz
+best ESN fixedParams,13,8.163850744656227e-06,55,55,Lorenz
+best ESN fixedParams,14,6.957831179397164e-06,55,55,Lorenz
+best ESN fixedParams,15,5.586349827715112e-06,55,55,Lorenz
+best ESN fixedParams,16,4.603221976748498e-06,55,55,Lorenz
+best ESN fixedParams,17,4.339816218766607e-06,55,55,Lorenz
+best ESN fixedParams,18,8.56211499744229e-06,55,55,Lorenz
+best ESN fixedParams,19,3.341166187124806e-06,55,55,Lorenz
+best ESN fixedParams,20,8.009012493148732e-06,55,55,Lorenz
+best ESN fixedParams,21,5.984728804632139e-06,55,55,Lorenz
+best ESN fixedParams,22,3.7297725942218453e-06,55,55,Lorenz
+best ESN fixedParams,23,6.993901032502245e-06,55,55,Lorenz
+best ESN fixedParams,24,7.66691222982632e-06,55,55,Lorenz
+best ESN fixedParams,0,2.6345959188122084e-06,78,78,Lorenz
+best ESN fixedParams,1,2.4453320196938995e-06,78,78,Lorenz
+best ESN fixedParams,2,2.719013348294627e-06,78,78,Lorenz
+best ESN fixedParams,3,2.1852265013621842e-06,78,78,Lorenz
+best ESN fixedParams,4,2.6102288714334287e-06,78,78,Lorenz
+best ESN fixedParams,5,2.4072290152535868e-06,78,78,Lorenz
+best ESN fixedParams,6,3.7630201279287577e-06,78,78,Lorenz
+best ESN fixedParams,7,4.578329772384185e-06,78,78,Lorenz
+best ESN fixedParams,8,3.4252352605351557e-06,78,78,Lorenz
+best ESN fixedParams,9,2.3406931221325006e-06,78,78,Lorenz
+best ESN fixedParams,10,1.772379797799166e-06,78,78,Lorenz
+best ESN fixedParams,11,1.8607064186159526e-06,78,78,Lorenz
+best ESN fixedParams,12,2.2015466538573017e-06,78,78,Lorenz
+best ESN fixedParams,13,2.7956885926249294e-06,78,78,Lorenz
+best ESN fixedParams,14,4.591588488149889e-06,78,78,Lorenz
+best ESN fixedParams,15,2.5135653877368702e-06,78,78,Lorenz
+best ESN fixedParams,16,3.873339564671515e-06,78,78,Lorenz
+best ESN fixedParams,17,2.7919291162608816e-06,78,78,Lorenz
+best ESN fixedParams,18,4.284479137521172e-06,78,78,Lorenz
+best ESN fixedParams,19,2.9419470093612544e-06,78,78,Lorenz
+best ESN fixedParams,20,3.9805854787063455e-06,78,78,Lorenz
+best ESN fixedParams,21,4.2140654064035994e-06,78,78,Lorenz
+best ESN fixedParams,22,2.8171382888139797e-06,78,78,Lorenz
+best ESN fixedParams,23,2.010988608767194e-06,78,78,Lorenz
+best ESN fixedParams,24,4.166151617645131e-06,78,78,Lorenz
+best ESN fixedParams,0,1.3687962315294357e-06,105,105,Lorenz
+best ESN fixedParams,1,2.3524664648241324e-06,105,105,Lorenz
+best ESN fixedParams,2,1.9642269006114773e-06,105,105,Lorenz
+best ESN fixedParams,3,1.380182082285485e-06,105,105,Lorenz
+best ESN fixedParams,4,1.5549939391690981e-06,105,105,Lorenz
+best ESN fixedParams,5,1.9502050488768948e-06,105,105,Lorenz
+best ESN fixedParams,6,1.7952772892167897e-06,105,105,Lorenz
+best ESN fixedParams,7,1.3799846949570577e-06,105,105,Lorenz
+best ESN fixedParams,8,2.1844964389422115e-06,105,105,Lorenz
+best ESN fixedParams,9,1.950228398508086e-06,105,105,Lorenz
+best ESN fixedParams,10,2.12393303244999e-06,105,105,Lorenz
+best ESN fixedParams,11,2.0848692337150362e-06,105,105,Lorenz
+best ESN fixedParams,12,1.3275589781688148e-06,105,105,Lorenz
+best ESN fixedParams,13,1.4162190115226334e-06,105,105,Lorenz
+best ESN fixedParams,14,1.8258107467720413e-06,105,105,Lorenz
+best ESN fixedParams,15,1.4094469968877943e-06,105,105,Lorenz
+best ESN fixedParams,16,2.0682051982856144e-06,105,105,Lorenz
+best ESN fixedParams,17,1.815577348461498e-06,105,105,Lorenz
+best ESN fixedParams,18,1.4826514217771077e-06,105,105,Lorenz
+best ESN fixedParams,19,1.5916515977623832e-06,105,105,Lorenz
+best ESN fixedParams,20,1.4200594899934416e-06,105,105,Lorenz
+best ESN fixedParams,21,1.744573436322688e-06,105,105,Lorenz
+best ESN fixedParams,22,1.8383699484341955e-06,105,105,Lorenz
+best ESN fixedParams,23,1.71103218814851e-06,105,105,Lorenz
+best ESN fixedParams,24,2.077114434653646e-06,105,105,Lorenz
+worst ESN fixedNeurons,0,0.2637069931273421,4,4,Lorenz
+worst ESN fixedNeurons,1,0.31466714401913876,4,4,Lorenz
+worst ESN fixedNeurons,2,0.3405613550667063,4,4,Lorenz
+worst ESN fixedNeurons,3,0.3009434294870673,4,4,Lorenz
+worst ESN fixedNeurons,4,0.28818703086862785,4,4,Lorenz
+worst ESN fixedNeurons,5,0.14928862482243585,4,4,Lorenz
+worst ESN fixedNeurons,6,0.30478502920815775,4,4,Lorenz
+worst ESN fixedNeurons,7,0.29998136137022324,4,4,Lorenz
+worst ESN fixedNeurons,8,0.2697079906725598,4,4,Lorenz
+worst ESN fixedNeurons,9,0.2729188914965018,4,4,Lorenz
+worst ESN fixedNeurons,10,0.2224722820738651,4,4,Lorenz
+worst ESN fixedNeurons,11,0.23073889191266914,4,4,Lorenz
+worst ESN fixedNeurons,12,0.3416422132662092,4,4,Lorenz
+worst ESN fixedNeurons,13,0.35637356029026546,4,4,Lorenz
+worst ESN fixedNeurons,14,0.3138158137978608,4,4,Lorenz
+worst ESN fixedNeurons,15,0.26016530261829846,4,4,Lorenz
+worst ESN fixedNeurons,16,0.29935087593519233,4,4,Lorenz
+worst ESN fixedNeurons,17,0.28967072069139277,4,4,Lorenz
+worst ESN fixedNeurons,18,0.2965701752235748,4,4,Lorenz
+worst ESN fixedNeurons,19,0.1716442787606192,4,4,Lorenz
+worst ESN fixedNeurons,20,0.23955163874986754,4,4,Lorenz
+worst ESN fixedNeurons,21,0.2137609350569535,4,4,Lorenz
+worst ESN fixedNeurons,22,0.29078820569041053,4,4,Lorenz
+worst ESN fixedNeurons,23,0.38713634525113017,4,4,Lorenz
+worst ESN fixedNeurons,24,0.25872308026004076,4,4,Lorenz
+worst ESN fixedNeurons,0,0.24325616076231651,6,6,Lorenz
+worst ESN fixedNeurons,1,0.17348142680902806,6,6,Lorenz
+worst ESN fixedNeurons,2,0.26599383714780883,6,6,Lorenz
+worst ESN fixedNeurons,3,0.1987772305395509,6,6,Lorenz
+worst ESN fixedNeurons,4,0.2130192487619844,6,6,Lorenz
+worst ESN fixedNeurons,5,0.3132886518095886,6,6,Lorenz
+worst ESN fixedNeurons,6,0.15860709007115453,6,6,Lorenz
+worst ESN fixedNeurons,7,0.1941414941037168,6,6,Lorenz
+worst ESN fixedNeurons,8,0.20699033842176323,6,6,Lorenz
+worst ESN fixedNeurons,9,0.21878682616450632,6,6,Lorenz
+worst ESN fixedNeurons,10,0.17647003269638692,6,6,Lorenz
+worst ESN fixedNeurons,11,0.23328067325511337,6,6,Lorenz
+worst ESN fixedNeurons,12,0.22813873183721275,6,6,Lorenz
+worst ESN fixedNeurons,13,0.3184074373236454,6,6,Lorenz
+worst ESN fixedNeurons,14,0.17443368535627052,6,6,Lorenz
+worst ESN fixedNeurons,15,0.44385498445613847,6,6,Lorenz
+worst ESN fixedNeurons,16,0.10443628847984888,6,6,Lorenz
+worst ESN fixedNeurons,17,0.1693971011131372,6,6,Lorenz
+worst ESN fixedNeurons,18,0.2558401812947282,6,6,Lorenz
+worst ESN fixedNeurons,19,0.22428196595123304,6,6,Lorenz
+worst ESN fixedNeurons,20,0.21269410510072143,6,6,Lorenz
+worst ESN fixedNeurons,21,0.23745736167538706,6,6,Lorenz
+worst ESN fixedNeurons,22,0.2145230849331773,6,6,Lorenz
+worst ESN fixedNeurons,23,0.24773363184081232,6,6,Lorenz
+worst ESN fixedNeurons,24,0.18583659262319305,6,6,Lorenz
+worst ESN fixedNeurons,0,0.1882543584116986,8,8,Lorenz
+worst ESN fixedNeurons,1,0.20219238724432886,8,8,Lorenz
+worst ESN fixedNeurons,2,0.1777661013024947,8,8,Lorenz
+worst ESN fixedNeurons,3,0.19373664352208125,8,8,Lorenz
+worst ESN fixedNeurons,4,0.19304446848882986,8,8,Lorenz
+worst ESN fixedNeurons,5,0.2408281619136629,8,8,Lorenz
+worst ESN fixedNeurons,6,0.13542676585441757,8,8,Lorenz
+worst ESN fixedNeurons,7,0.18812080010311966,8,8,Lorenz
+worst ESN fixedNeurons,8,0.20938686390347716,8,8,Lorenz
+worst ESN fixedNeurons,9,0.15996877566538006,8,8,Lorenz
+worst ESN fixedNeurons,10,0.24523945349670265,8,8,Lorenz
+worst ESN fixedNeurons,11,0.1387221698587729,8,8,Lorenz
+worst ESN fixedNeurons,12,0.22045310412350005,8,8,Lorenz
+worst ESN fixedNeurons,13,0.21154732253822464,8,8,Lorenz
+worst ESN fixedNeurons,14,0.16860757306385118,8,8,Lorenz
+worst ESN fixedNeurons,15,0.13002536268810444,8,8,Lorenz
+worst ESN fixedNeurons,16,0.2377564991835684,8,8,Lorenz
+worst ESN fixedNeurons,17,0.19551970288480086,8,8,Lorenz
+worst ESN fixedNeurons,18,0.18441796883423484,8,8,Lorenz
+worst ESN fixedNeurons,19,0.16814752282785994,8,8,Lorenz
+worst ESN fixedNeurons,20,0.19723211720897976,8,8,Lorenz
+worst ESN fixedNeurons,21,0.19892915001582287,8,8,Lorenz
+worst ESN fixedNeurons,22,0.22829958283453203,8,8,Lorenz
+worst ESN fixedNeurons,23,0.16247611773003415,8,8,Lorenz
+worst ESN fixedNeurons,24,0.1413344679080622,8,8,Lorenz
+worst ESN fixedNeurons,0,0.1702590512687883,10,10,Lorenz
+worst ESN fixedNeurons,1,0.18750756916008168,10,10,Lorenz
+worst ESN fixedNeurons,2,0.16002437517125517,10,10,Lorenz
+worst ESN fixedNeurons,3,0.15262150418000786,10,10,Lorenz
+worst ESN fixedNeurons,4,0.17473161348308938,10,10,Lorenz
+worst ESN fixedNeurons,5,0.17501929350695675,10,10,Lorenz
+worst ESN fixedNeurons,6,0.191652956546907,10,10,Lorenz
+worst ESN fixedNeurons,7,0.17470494585518534,10,10,Lorenz
+worst ESN fixedNeurons,8,0.22210623125394005,10,10,Lorenz
+worst ESN fixedNeurons,9,0.20647989131505284,10,10,Lorenz
+worst ESN fixedNeurons,10,0.1484427779440627,10,10,Lorenz
+worst ESN fixedNeurons,11,0.21067281804413235,10,10,Lorenz
+worst ESN fixedNeurons,12,0.12568307294297948,10,10,Lorenz
+worst ESN fixedNeurons,13,0.1387747108054867,10,10,Lorenz
+worst ESN fixedNeurons,14,0.3079313650676268,10,10,Lorenz
+worst ESN fixedNeurons,15,0.1282270890329872,10,10,Lorenz
+worst ESN fixedNeurons,16,0.17980540762298408,10,10,Lorenz
+worst ESN fixedNeurons,17,0.15198677852911618,10,10,Lorenz
+worst ESN fixedNeurons,18,0.16965037636910274,10,10,Lorenz
+worst ESN fixedNeurons,19,0.1765746604397105,10,10,Lorenz
+worst ESN fixedNeurons,20,0.12316486624824358,10,10,Lorenz
+worst ESN fixedNeurons,21,0.18706384445369054,10,10,Lorenz
+worst ESN fixedNeurons,22,0.15007310665053059,10,10,Lorenz
+worst ESN fixedNeurons,23,0.16775561104310488,10,10,Lorenz
+worst ESN fixedNeurons,24,0.1526478539847058,10,10,Lorenz
+worst ESN fixedNeurons,0,0.12771613883435243,12,12,Lorenz
+worst ESN fixedNeurons,1,0.08932181552943284,12,12,Lorenz
+worst ESN fixedNeurons,2,0.13425584640452484,12,12,Lorenz
+worst ESN fixedNeurons,3,0.13053599506474015,12,12,Lorenz
+worst ESN fixedNeurons,4,0.12859350627018248,12,12,Lorenz
+worst ESN fixedNeurons,5,0.12068214706610779,12,12,Lorenz
+worst ESN fixedNeurons,6,0.1558833202652143,12,12,Lorenz
+worst ESN fixedNeurons,7,0.1640585476266176,12,12,Lorenz
+worst ESN fixedNeurons,8,0.13337982142410665,12,12,Lorenz
+worst ESN fixedNeurons,9,0.13415505563381108,12,12,Lorenz
+worst ESN fixedNeurons,10,0.13529979161124464,12,12,Lorenz
+worst ESN fixedNeurons,11,0.12104286588645133,12,12,Lorenz
+worst ESN fixedNeurons,12,0.1622983082356162,12,12,Lorenz
+worst ESN fixedNeurons,13,0.1902703866903516,12,12,Lorenz
+worst ESN fixedNeurons,14,0.16358466030484692,12,12,Lorenz
+worst ESN fixedNeurons,15,0.23147706311607366,12,12,Lorenz
+worst ESN fixedNeurons,16,0.15501518688062804,12,12,Lorenz
+worst ESN fixedNeurons,17,0.22324523792794967,12,12,Lorenz
+worst ESN fixedNeurons,18,0.18697137033323394,12,12,Lorenz
+worst ESN fixedNeurons,19,0.17985392170430603,12,12,Lorenz
+worst ESN fixedNeurons,20,0.14984254429040142,12,12,Lorenz
+worst ESN fixedNeurons,21,0.15492609448421735,12,12,Lorenz
+worst ESN fixedNeurons,22,0.19222618056758567,12,12,Lorenz
+worst ESN fixedNeurons,23,0.14801944065494155,12,12,Lorenz
+worst ESN fixedNeurons,24,0.10011687975264309,12,12,Lorenz
+worst ESN fixedNeurons,0,0.145931916806488,14,14,Lorenz
+worst ESN fixedNeurons,1,0.10435009924764951,14,14,Lorenz
+worst ESN fixedNeurons,2,0.1490042501520406,14,14,Lorenz
+worst ESN fixedNeurons,3,0.14350328070195473,14,14,Lorenz
+worst ESN fixedNeurons,4,0.14318224014747016,14,14,Lorenz
+worst ESN fixedNeurons,5,0.1290048238026948,14,14,Lorenz
+worst ESN fixedNeurons,6,0.1385091634000705,14,14,Lorenz
+worst ESN fixedNeurons,7,0.1607515957790801,14,14,Lorenz
+worst ESN fixedNeurons,8,0.1368070812043279,14,14,Lorenz
+worst ESN fixedNeurons,9,0.12145954576727644,14,14,Lorenz
+worst ESN fixedNeurons,10,0.09592750071367877,14,14,Lorenz
+worst ESN fixedNeurons,11,0.1262229980362488,14,14,Lorenz
+worst ESN fixedNeurons,12,0.08145213066820194,14,14,Lorenz
+worst ESN fixedNeurons,13,0.11148278781588578,14,14,Lorenz
+worst ESN fixedNeurons,14,0.15473873406394995,14,14,Lorenz
+worst ESN fixedNeurons,15,0.16290993749030758,14,14,Lorenz
+worst ESN fixedNeurons,16,0.13754144906612897,14,14,Lorenz
+worst ESN fixedNeurons,17,0.0768172299392763,14,14,Lorenz
+worst ESN fixedNeurons,18,0.14960873426752633,14,14,Lorenz
+worst ESN fixedNeurons,19,0.11327568107734926,14,14,Lorenz
+worst ESN fixedNeurons,20,0.10445433507696379,14,14,Lorenz
+worst ESN fixedNeurons,21,0.12172015300596782,14,14,Lorenz
+worst ESN fixedNeurons,22,0.15173225858495645,14,14,Lorenz
+worst ESN fixedNeurons,23,0.13175242917773236,14,14,Lorenz
+worst ESN fixedNeurons,24,0.1358536164399787,14,14,Lorenz
+worst ESN fixedParams,0,0.1702590512687883,10,10,Lorenz
+worst ESN fixedParams,1,0.18750756916008168,10,10,Lorenz
+worst ESN fixedParams,2,0.16002437517125517,10,10,Lorenz
+worst ESN fixedParams,3,0.15262150418000786,10,10,Lorenz
+worst ESN fixedParams,4,0.17473161348308938,10,10,Lorenz
+worst ESN fixedParams,5,0.17501929350695675,10,10,Lorenz
+worst ESN fixedParams,6,0.191652956546907,10,10,Lorenz
+worst ESN fixedParams,7,0.17470494585518534,10,10,Lorenz
+worst ESN fixedParams,8,0.22210623125394005,10,10,Lorenz
+worst ESN fixedParams,9,0.20647989131505284,10,10,Lorenz
+worst ESN fixedParams,10,0.1484427779440627,10,10,Lorenz
+worst ESN fixedParams,11,0.21067281804413235,10,10,Lorenz
+worst ESN fixedParams,12,0.12568307294297948,10,10,Lorenz
+worst ESN fixedParams,13,0.1387747108054867,10,10,Lorenz
+worst ESN fixedParams,14,0.3079313650676268,10,10,Lorenz
+worst ESN fixedParams,15,0.1282270890329872,10,10,Lorenz
+worst ESN fixedParams,16,0.17980540762298408,10,10,Lorenz
+worst ESN fixedParams,17,0.15198677852911618,10,10,Lorenz
+worst ESN fixedParams,18,0.16965037636910274,10,10,Lorenz
+worst ESN fixedParams,19,0.1765746604397105,10,10,Lorenz
+worst ESN fixedParams,20,0.12316486624824358,10,10,Lorenz
+worst ESN fixedParams,21,0.18706384445369054,10,10,Lorenz
+worst ESN fixedParams,22,0.15007310665053059,10,10,Lorenz
+worst ESN fixedParams,23,0.16775561104310488,10,10,Lorenz
+worst ESN fixedParams,24,0.1526478539847058,10,10,Lorenz
+worst ESN fixedParams,0,0.0636624807092708,21,21,Lorenz
+worst ESN fixedParams,1,0.10072008517275653,21,21,Lorenz
+worst ESN fixedParams,2,0.1205974901530047,21,21,Lorenz
+worst ESN fixedParams,3,0.11025813078703271,21,21,Lorenz
+worst ESN fixedParams,4,0.0828582616071815,21,21,Lorenz
+worst ESN fixedParams,5,0.11177176195306168,21,21,Lorenz
+worst ESN fixedParams,6,0.11734228937565525,21,21,Lorenz
+worst ESN fixedParams,7,0.11888544733859885,21,21,Lorenz
+worst ESN fixedParams,8,0.1008722166978576,21,21,Lorenz
+worst ESN fixedParams,9,0.08485209002133795,21,21,Lorenz
+worst ESN fixedParams,10,0.10941613327181528,21,21,Lorenz
+worst ESN fixedParams,11,0.11474797419468166,21,21,Lorenz
+worst ESN fixedParams,12,0.10294772662984841,21,21,Lorenz
+worst ESN fixedParams,13,0.09162718264396219,21,21,Lorenz
+worst ESN fixedParams,14,0.08794882985482112,21,21,Lorenz
+worst ESN fixedParams,15,0.10423904314503837,21,21,Lorenz
+worst ESN fixedParams,16,0.1276428936014037,21,21,Lorenz
+worst ESN fixedParams,17,0.11318129542152482,21,21,Lorenz
+worst ESN fixedParams,18,0.14191354291427452,21,21,Lorenz
+worst ESN fixedParams,19,0.13744359988584456,21,21,Lorenz
+worst ESN fixedParams,20,0.11110146188092623,21,21,Lorenz
+worst ESN fixedParams,21,0.09445265792203404,21,21,Lorenz
+worst ESN fixedParams,22,0.1420247869189602,21,21,Lorenz
+worst ESN fixedParams,23,0.08568235831315586,21,21,Lorenz
+worst ESN fixedParams,24,0.1054447360376825,21,21,Lorenz
+worst ESN fixedParams,0,0.04049163780858874,36,36,Lorenz
+worst ESN fixedParams,1,0.0549526993268139,36,36,Lorenz
+worst ESN fixedParams,2,0.07071578598503196,36,36,Lorenz
+worst ESN fixedParams,3,0.05267922925190148,36,36,Lorenz
+worst ESN fixedParams,4,0.07348896120737661,36,36,Lorenz
+worst ESN fixedParams,5,0.09716204699611136,36,36,Lorenz
+worst ESN fixedParams,6,0.06988446314672896,36,36,Lorenz
+worst ESN fixedParams,7,0.04709715936038042,36,36,Lorenz
+worst ESN fixedParams,8,0.07279079958273552,36,36,Lorenz
+worst ESN fixedParams,9,0.04664556338481524,36,36,Lorenz
+worst ESN fixedParams,10,0.05627459907950666,36,36,Lorenz
+worst ESN fixedParams,11,0.05242325117064625,36,36,Lorenz
+worst ESN fixedParams,12,0.06320525880499309,36,36,Lorenz
+worst ESN fixedParams,13,0.08222938649689256,36,36,Lorenz
+worst ESN fixedParams,14,0.06580409773631078,36,36,Lorenz
+worst ESN fixedParams,15,0.10045795845619428,36,36,Lorenz
+worst ESN fixedParams,16,0.05162234316845299,36,36,Lorenz
+worst ESN fixedParams,17,0.06489599926245367,36,36,Lorenz
+worst ESN fixedParams,18,0.056542684397306066,36,36,Lorenz
+worst ESN fixedParams,19,0.07774077270826572,36,36,Lorenz
+worst ESN fixedParams,20,0.04414188649616394,36,36,Lorenz
+worst ESN fixedParams,21,0.060531268464402904,36,36,Lorenz
+worst ESN fixedParams,22,0.08053556215898837,36,36,Lorenz
+worst ESN fixedParams,23,0.07387895124943554,36,36,Lorenz
+worst ESN fixedParams,24,0.0614804394300569,36,36,Lorenz
+worst ESN fixedParams,0,0.06166375840099105,55,55,Lorenz
+worst ESN fixedParams,1,0.035910895850042646,55,55,Lorenz
+worst ESN fixedParams,2,0.03566221683317392,55,55,Lorenz
+worst ESN fixedParams,3,0.05042937195362532,55,55,Lorenz
+worst ESN fixedParams,4,0.04456240179029369,55,55,Lorenz
+worst ESN fixedParams,5,0.0461127764724671,55,55,Lorenz
+worst ESN fixedParams,6,0.05274399519608322,55,55,Lorenz
+worst ESN fixedParams,7,0.05396231229006473,55,55,Lorenz
+worst ESN fixedParams,8,0.034010163082093446,55,55,Lorenz
+worst ESN fixedParams,9,0.0265847326529352,55,55,Lorenz
+worst ESN fixedParams,10,0.06519053781002611,55,55,Lorenz
+worst ESN fixedParams,11,0.042076139327021346,55,55,Lorenz
+worst ESN fixedParams,12,0.04420780617226644,55,55,Lorenz
+worst ESN fixedParams,13,0.03300389176863258,55,55,Lorenz
+worst ESN fixedParams,14,0.058243771019382856,55,55,Lorenz
+worst ESN fixedParams,15,0.030874495563517568,55,55,Lorenz
+worst ESN fixedParams,16,0.047205441377031816,55,55,Lorenz
+worst ESN fixedParams,17,0.029253266540921245,55,55,Lorenz
+worst ESN fixedParams,18,0.05558050670229562,55,55,Lorenz
+worst ESN fixedParams,19,0.039646900344828026,55,55,Lorenz
+worst ESN fixedParams,20,0.03599913506095869,55,55,Lorenz
+worst ESN fixedParams,21,0.05751851191845795,55,55,Lorenz
+worst ESN fixedParams,22,0.04548452119823523,55,55,Lorenz
+worst ESN fixedParams,23,0.02421762106882328,55,55,Lorenz
+worst ESN fixedParams,24,0.030823927477636487,55,55,Lorenz
+worst ESN fixedParams,0,0.01705249567544012,78,78,Lorenz
+worst ESN fixedParams,1,0.020298553924783046,78,78,Lorenz
+worst ESN fixedParams,2,0.040682130877880036,78,78,Lorenz
+worst ESN fixedParams,3,0.03013394082428791,78,78,Lorenz
+worst ESN fixedParams,4,0.032489240910234286,78,78,Lorenz
+worst ESN fixedParams,5,0.0320415609798143,78,78,Lorenz
+worst ESN fixedParams,6,0.027543387421626712,78,78,Lorenz
+worst ESN fixedParams,7,0.035243133531281355,78,78,Lorenz
+worst ESN fixedParams,8,0.03867166805480378,78,78,Lorenz
+worst ESN fixedParams,9,0.03193172303551451,78,78,Lorenz
+worst ESN fixedParams,10,0.01912848310622777,78,78,Lorenz
+worst ESN fixedParams,11,0.03283958442858786,78,78,Lorenz
+worst ESN fixedParams,12,0.03074175649408861,78,78,Lorenz
+worst ESN fixedParams,13,0.019168599183655908,78,78,Lorenz
+worst ESN fixedParams,14,0.027065337184888464,78,78,Lorenz
+worst ESN fixedParams,15,0.03098764302055119,78,78,Lorenz
+worst ESN fixedParams,16,0.026556403844537804,78,78,Lorenz
+worst ESN fixedParams,17,0.02916864363474643,78,78,Lorenz
+worst ESN fixedParams,18,0.031116960371829733,78,78,Lorenz
+worst ESN fixedParams,19,0.03834515834202446,78,78,Lorenz
+worst ESN fixedParams,20,0.022209566131848116,78,78,Lorenz
+worst ESN fixedParams,21,0.026880056031253048,78,78,Lorenz
+worst ESN fixedParams,22,0.03365168991237396,78,78,Lorenz
+worst ESN fixedParams,23,0.034063272855038004,78,78,Lorenz
+worst ESN fixedParams,24,0.034778490239590794,78,78,Lorenz
+worst ESN fixedParams,0,0.01790259815900706,105,105,Lorenz
+worst ESN fixedParams,1,0.018428281444313722,105,105,Lorenz
+worst ESN fixedParams,2,0.02067287756140433,105,105,Lorenz
+worst ESN fixedParams,3,0.02146026426268719,105,105,Lorenz
+worst ESN fixedParams,4,0.0251957880221236,105,105,Lorenz
+worst ESN fixedParams,5,0.015377208026193563,105,105,Lorenz
+worst ESN fixedParams,6,0.01703571446416718,105,105,Lorenz
+worst ESN fixedParams,7,0.018614055257352425,105,105,Lorenz
+worst ESN fixedParams,8,0.025026445230190056,105,105,Lorenz
+worst ESN fixedParams,9,0.01924431201229829,105,105,Lorenz
+worst ESN fixedParams,10,0.024256521424081582,105,105,Lorenz
+worst ESN fixedParams,11,0.019644896561094492,105,105,Lorenz
+worst ESN fixedParams,12,0.02040180682294043,105,105,Lorenz
+worst ESN fixedParams,13,0.019605258899184446,105,105,Lorenz
+worst ESN fixedParams,14,0.014494498497777723,105,105,Lorenz
+worst ESN fixedParams,15,0.019435613848103217,105,105,Lorenz
+worst ESN fixedParams,16,0.021329797741461265,105,105,Lorenz
+worst ESN fixedParams,17,0.022490320528679452,105,105,Lorenz
+worst ESN fixedParams,18,0.01971056677242514,105,105,Lorenz
+worst ESN fixedParams,19,0.026822016759736812,105,105,Lorenz
+worst ESN fixedParams,20,0.02198620486087085,105,105,Lorenz
+worst ESN fixedParams,21,0.03219541658382258,105,105,Lorenz
+worst ESN fixedParams,22,0.021339746043555284,105,105,Lorenz
+worst ESN fixedParams,23,0.01355390825795209,105,105,Lorenz
+worst ESN fixedParams,24,0.0258604621699483,105,105,Lorenz
+best LSTM,0,0.3731048245975986,1,1,Lorenz
+best LSTM,1,0.37487729333142467,1,1,Lorenz
+best LSTM,2,0.37520049376669456,1,1,Lorenz
+best LSTM,3,0.3744113056979651,1,1,Lorenz
+best LSTM,4,0.39047975628575454,1,1,Lorenz
+best LSTM,5,0.3740592823654513,1,1,Lorenz
+best LSTM,6,0.3757629480746504,1,1,Lorenz
+best LSTM,7,0.37512201298453074,1,1,Lorenz
+best LSTM,8,0.37347390016931603,1,1,Lorenz
+best LSTM,9,0.3743595785317929,1,1,Lorenz
+best LSTM,10,0.37411289252159513,1,1,Lorenz
+best LSTM,11,0.3745170626723476,1,1,Lorenz
+best LSTM,12,0.3775920654573071,1,1,Lorenz
+best LSTM,13,0.37549427257766954,1,1,Lorenz
+best LSTM,14,0.372376416774902,1,1,Lorenz
+best LSTM,15,0.37930933484786,1,1,Lorenz
+best LSTM,16,0.37707131424264306,1,1,Lorenz
+best LSTM,17,0.3763358480672427,1,1,Lorenz
+best LSTM,18,0.41517390672454985,1,1,Lorenz
+best LSTM,19,0.3733583136237756,1,1,Lorenz
+best LSTM,20,0.38915627773861994,1,1,Lorenz
+best LSTM,21,0.3748973941695733,1,1,Lorenz
+best LSTM,22,0.40195126828968597,1,1,Lorenz
+best LSTM,23,0.37615621507431407,1,1,Lorenz
+best LSTM,24,0.37543082488367213,1,1,Lorenz
+best LSTM,0,0.009540608860919671,3,3,Lorenz
+best LSTM,1,0.009085090697869372,3,3,Lorenz
+best LSTM,2,0.007632451425579144,3,3,Lorenz
+best LSTM,3,0.02790535984110474,3,3,Lorenz
+best LSTM,4,0.010583305820978425,3,3,Lorenz
+best LSTM,5,0.026035109311486896,3,3,Lorenz
+best LSTM,6,0.006762657961336454,3,3,Lorenz
+best LSTM,7,0.008809248546233424,3,3,Lorenz
+best LSTM,8,0.006572889140051459,3,3,Lorenz
+best LSTM,9,0.00638252363816501,3,3,Lorenz
+best LSTM,10,0.02428293848440785,3,3,Lorenz
+best LSTM,11,0.005439278897410853,3,3,Lorenz
+best LSTM,12,0.04012295676285163,3,3,Lorenz
+best LSTM,13,0.007841580200060516,3,3,Lorenz
+best LSTM,14,0.010387303563898807,3,3,Lorenz
+best LSTM,15,0.004699506978964993,3,3,Lorenz
+best LSTM,16,0.012164040360127363,3,3,Lorenz
+best LSTM,17,0.035464401511083245,3,3,Lorenz
+best LSTM,18,0.00533176052828648,3,3,Lorenz
+best LSTM,19,0.005192698699309707,3,3,Lorenz
+best LSTM,20,0.006770729938732414,3,3,Lorenz
+best LSTM,21,0.016055598917779832,3,3,Lorenz
+best LSTM,22,0.007070181529331303,3,3,Lorenz
+best LSTM,23,0.018622036307925003,3,3,Lorenz
+best LSTM,24,0.0071782706976415665,3,3,Lorenz
+best LSTM,0,0.003225182437807874,5,5,Lorenz
+best LSTM,1,0.0019870268742468154,5,5,Lorenz
+best LSTM,2,0.001980659886041677,5,5,Lorenz
+best LSTM,3,0.001453545623692056,5,5,Lorenz
+best LSTM,4,0.003926782464200291,5,5,Lorenz
+best LSTM,5,0.00283951421722294,5,5,Lorenz
+best LSTM,6,0.0028281694804313724,5,5,Lorenz
+best LSTM,7,0.003303544094313497,5,5,Lorenz
+best LSTM,8,0.004170016408817336,5,5,Lorenz
+best LSTM,9,0.004575985423768415,5,5,Lorenz
+best LSTM,10,0.001825916158884182,5,5,Lorenz
+best LSTM,11,0.002000795069928189,5,5,Lorenz
+best LSTM,12,0.0022656250172993888,5,5,Lorenz
+best LSTM,13,0.004965650684762708,5,5,Lorenz
+best LSTM,14,0.0025311855009575333,5,5,Lorenz
+best LSTM,15,0.0036507296355478436,5,5,Lorenz
+best LSTM,16,0.001803712074340596,5,5,Lorenz
+best LSTM,17,0.0022812669321703753,5,5,Lorenz
+best LSTM,18,0.001639313969046262,5,5,Lorenz
+best LSTM,19,0.002619071862369604,5,5,Lorenz
+best LSTM,20,0.004355918242166872,5,5,Lorenz
+best LSTM,21,0.0027550018647139146,5,5,Lorenz
+best LSTM,22,0.0019122638216585324,5,5,Lorenz
+best LSTM,23,0.001829400680017258,5,5,Lorenz
+best LSTM,24,0.0038673746048635306,5,5,Lorenz
+best LSTM,0,0.00138185111084505,7,7,Lorenz
+best LSTM,1,0.0008750000356875558,7,7,Lorenz
+best LSTM,2,0.0012525120624548563,7,7,Lorenz
+best LSTM,3,0.0015261801540226397,7,7,Lorenz
+best LSTM,4,0.0013632800900260002,7,7,Lorenz
+best LSTM,5,0.0013870492839149183,7,7,Lorenz
+best LSTM,6,0.0009129317404408194,7,7,Lorenz
+best LSTM,7,0.0004539634893482821,7,7,Lorenz
+best LSTM,8,0.0016784806874167058,7,7,Lorenz
+best LSTM,9,0.0009266892850306452,7,7,Lorenz
+best LSTM,10,0.0013911133481611794,7,7,Lorenz
+best LSTM,11,0.0010345526841380888,7,7,Lorenz
+best LSTM,12,0.0015864395322241456,7,7,Lorenz
+best LSTM,13,0.0013552133743975144,7,7,Lorenz
+best LSTM,14,0.0006024881275474175,7,7,Lorenz
+best LSTM,15,0.0007598492945508692,7,7,Lorenz
+best LSTM,16,0.001382299045384645,7,7,Lorenz
+best LSTM,17,0.000899823174152863,7,7,Lorenz
+best LSTM,18,0.0011808186512553343,7,7,Lorenz
+best LSTM,19,0.0016586179932683142,7,7,Lorenz
+best LSTM,20,0.0006985263355296781,7,7,Lorenz
+best LSTM,21,0.0011021717354279363,7,7,Lorenz
+best LSTM,22,0.0015928730074301115,7,7,Lorenz
+best LSTM,23,0.00147205065776969,7,7,Lorenz
+best LSTM,24,0.0008352570114053859,7,7,Lorenz
+best LSTM,0,0.0007689882825114362,9,9,Lorenz
+best LSTM,1,0.0004243182773408654,9,9,Lorenz
+best LSTM,2,0.0004334836018430435,9,9,Lorenz
+best LSTM,3,0.0007862439449279033,9,9,Lorenz
+best LSTM,4,0.0007562890168422995,9,9,Lorenz
+best LSTM,5,0.0007764529230407224,9,9,Lorenz
+best LSTM,6,0.0005998562574329921,9,9,Lorenz
+best LSTM,7,0.000452673974601287,9,9,Lorenz
+best LSTM,8,0.0008359303352942512,9,9,Lorenz
+best LSTM,9,0.0006822959945485842,9,9,Lorenz
+best LSTM,10,0.0006640290288886046,9,9,Lorenz
+best LSTM,11,0.0011834621418664536,9,9,Lorenz
+best LSTM,12,0.0003924357771013704,9,9,Lorenz
+best LSTM,13,0.0005619619514017879,9,9,Lorenz
+best LSTM,14,0.0006298670370656103,9,9,Lorenz
+best LSTM,15,0.0006079430679083181,9,9,Lorenz
+best LSTM,16,0.0006203949991248562,9,9,Lorenz
+best LSTM,17,0.0009616653303550477,9,9,Lorenz
+best LSTM,18,0.0007196006605792363,9,9,Lorenz
+best LSTM,19,0.0007032240401182322,9,9,Lorenz
+best LSTM,20,0.00045190478683604645,9,9,Lorenz
+best LSTM,21,0.000878778976222802,9,9,Lorenz
+best LSTM,22,0.0005205279532018821,9,9,Lorenz
+best LSTM,23,0.00036421318986511577,9,9,Lorenz
+best LSTM,24,0.0008154005756262287,9,9,Lorenz
+best LSTM,0,0.0003736518854410503,11,11,Lorenz
+best LSTM,1,0.00033916721734797797,11,11,Lorenz
+best LSTM,2,0.00038670011303820295,11,11,Lorenz
+best LSTM,3,0.00018338383745516445,11,11,Lorenz
+best LSTM,4,0.000327749406388978,11,11,Lorenz
+best LSTM,5,0.00021563187278947894,11,11,Lorenz
+best LSTM,6,0.00037404293887713873,11,11,Lorenz
+best LSTM,7,0.00024197238126477,11,11,Lorenz
+best LSTM,8,0.00029153935663208855,11,11,Lorenz
+best LSTM,9,0.0002987555362848103,11,11,Lorenz
+best LSTM,10,0.0002899362417034537,11,11,Lorenz
+best LSTM,11,0.0003511367018320378,11,11,Lorenz
+best LSTM,12,0.0003476083965747816,11,11,Lorenz
+best LSTM,13,0.0003456641825889466,11,11,Lorenz
+best LSTM,14,0.0008276333375348838,11,11,Lorenz
+best LSTM,15,0.00046035532069828663,11,11,Lorenz
+best LSTM,16,0.0002506135527437282,11,11,Lorenz
+best LSTM,17,0.0004056564451397201,11,11,Lorenz
+best LSTM,18,0.0002889834159907165,11,11,Lorenz
+best LSTM,19,0.0003787754080593962,11,11,Lorenz
+best LSTM,20,0.00024104813515343952,11,11,Lorenz
+best LSTM,21,0.0003728491535132274,11,11,Lorenz
+best LSTM,22,0.00042399217538815375,11,11,Lorenz
+best LSTM,23,0.00030770825434601665,11,11,Lorenz
+best LSTM,24,0.00037178012762867905,11,11,Lorenz
+worst LSTM,0,0.8493605580841832,1,1,Lorenz
+worst LSTM,1,0.9388581499318839,1,1,Lorenz
+worst LSTM,2,0.8995405660702723,1,1,Lorenz
+worst LSTM,3,0.9732975709993225,1,1,Lorenz
+worst LSTM,4,0.8845162060543822,1,1,Lorenz
+worst LSTM,5,1.0911946011600606,1,1,Lorenz
+worst LSTM,6,0.8258069524804953,1,1,Lorenz
+worst LSTM,7,1.1253452966687556,1,1,Lorenz
+worst LSTM,8,1.079979259303183,1,1,Lorenz
+worst LSTM,9,0.9385349510143111,1,1,Lorenz
+worst LSTM,10,1.0109771758693857,1,1,Lorenz
+worst LSTM,11,0.8391601580665248,1,1,Lorenz
+worst LSTM,12,1.080476584698679,1,1,Lorenz
+worst LSTM,13,0.9999950960952775,1,1,Lorenz
+worst LSTM,14,1.1197789532343476,1,1,Lorenz
+worst LSTM,15,0.8329240976644359,1,1,Lorenz
+worst LSTM,16,0.8405827267777165,1,1,Lorenz
+worst LSTM,17,0.9656500681306018,1,1,Lorenz
+worst LSTM,18,0.9495180854994762,1,1,Lorenz
+worst LSTM,19,1.1851570164068528,1,1,Lorenz
+worst LSTM,20,1.190976671474293,1,1,Lorenz
+worst LSTM,21,1.3016870000874392,1,1,Lorenz
+worst LSTM,22,1.1948429472689097,1,1,Lorenz
+worst LSTM,23,1.1655193975198852,1,1,Lorenz
+worst LSTM,24,0.9937104287162267,1,1,Lorenz
+worst LSTM,0,0.9253553732225533,3,3,Lorenz
+worst LSTM,1,0.9245927588693488,3,3,Lorenz
+worst LSTM,2,0.818774993423125,3,3,Lorenz
+worst LSTM,3,1.564235370245954,3,3,Lorenz
+worst LSTM,4,1.267492417953915,3,3,Lorenz
+worst LSTM,5,1.0242034484580929,3,3,Lorenz
+worst LSTM,6,1.0315084042222868,3,3,Lorenz
+worst LSTM,7,0.9636706840685743,3,3,Lorenz
+worst LSTM,8,1.1331446022951484,3,3,Lorenz
+worst LSTM,9,1.1252203773912506,3,3,Lorenz
+worst LSTM,10,0.7838404950717012,3,3,Lorenz
+worst LSTM,11,1.1121445125261435,3,3,Lorenz
+worst LSTM,12,1.0936273018128335,3,3,Lorenz
+worst LSTM,13,0.9199471464724603,3,3,Lorenz
+worst LSTM,14,1.0902657558634394,3,3,Lorenz
+worst LSTM,15,1.4343994238544595,3,3,Lorenz
+worst LSTM,16,0.6145037817888165,3,3,Lorenz
+worst LSTM,17,1.0941096488128248,3,3,Lorenz
+worst LSTM,18,1.010523071960347,3,3,Lorenz
+worst LSTM,19,0.9614439795937256,3,3,Lorenz
+worst LSTM,20,0.6939435195201685,3,3,Lorenz
+worst LSTM,21,1.2445425615591947,3,3,Lorenz
+worst LSTM,22,0.8504836233231581,3,3,Lorenz
+worst LSTM,23,1.1167722091409729,3,3,Lorenz
+worst LSTM,24,1.5123204938032468,3,3,Lorenz
+worst LSTM,0,1.0119061862375884,5,5,Lorenz
+worst LSTM,1,0.7626244823437787,5,5,Lorenz
+worst LSTM,2,0.9277893453678624,5,5,Lorenz
+worst LSTM,3,0.5644103453850858,5,5,Lorenz
+worst LSTM,4,0.5499923907207535,5,5,Lorenz
+worst LSTM,5,0.9590904276795796,5,5,Lorenz
+worst LSTM,6,1.173852743008517,5,5,Lorenz
+worst LSTM,7,0.9963996573694256,5,5,Lorenz
+worst LSTM,8,0.7272982637612477,5,5,Lorenz
+worst LSTM,9,0.799818173343724,5,5,Lorenz
+worst LSTM,10,1.2993589239731265,5,5,Lorenz
+worst LSTM,11,0.8962266379416861,5,5,Lorenz
+worst LSTM,12,0.6736293663894656,5,5,Lorenz
+worst LSTM,13,0.8095448163191393,5,5,Lorenz
+worst LSTM,14,0.6608664142058696,5,5,Lorenz
+worst LSTM,15,0.6423046221217672,5,5,Lorenz
+worst LSTM,16,0.8856502551508263,5,5,Lorenz
+worst LSTM,17,1.0581260384494904,5,5,Lorenz
+worst LSTM,18,0.7800106029192152,5,5,Lorenz
+worst LSTM,19,0.9904491196668657,5,5,Lorenz
+worst LSTM,20,0.9081777008016156,5,5,Lorenz
+worst LSTM,21,0.7769713114522575,5,5,Lorenz
+worst LSTM,22,0.6360786957412597,5,5,Lorenz
+worst LSTM,23,1.1378980755501102,5,5,Lorenz
+worst LSTM,24,0.864759043542826,5,5,Lorenz
+worst LSTM,0,0.8161623406412306,7,7,Lorenz
+worst LSTM,1,0.9470635311968899,7,7,Lorenz
+worst LSTM,2,0.6311945370822554,7,7,Lorenz
+worst LSTM,3,1.1465696281270892,7,7,Lorenz
+worst LSTM,4,0.9368904199463947,7,7,Lorenz
+worst LSTM,5,0.6231546180715964,7,7,Lorenz
+worst LSTM,6,0.7455921746200865,7,7,Lorenz
+worst LSTM,7,0.8233457877253201,7,7,Lorenz
+worst LSTM,8,0.7576494982304766,7,7,Lorenz
+worst LSTM,9,0.8424131121192907,7,7,Lorenz
+worst LSTM,10,0.7558065264184033,7,7,Lorenz
+worst LSTM,11,1.1968765672401573,7,7,Lorenz
+worst LSTM,12,1.2145397104168885,7,7,Lorenz
+worst LSTM,13,0.6766862485229084,7,7,Lorenz
+worst LSTM,14,0.9059542084502984,7,7,Lorenz
+worst LSTM,15,0.9250811070433119,7,7,Lorenz
+worst LSTM,16,0.7684019749317027,7,7,Lorenz
+worst LSTM,17,0.5234499389722675,7,7,Lorenz
+worst LSTM,18,1.0029039581075914,7,7,Lorenz
+worst LSTM,19,0.6778710083763841,7,7,Lorenz
+worst LSTM,20,0.73088173704725,7,7,Lorenz
+worst LSTM,21,0.8842410170479238,7,7,Lorenz
+worst LSTM,22,0.9482905730118705,7,7,Lorenz
+worst LSTM,23,0.9741672630789847,7,7,Lorenz
+worst LSTM,24,0.6137601180216474,7,7,Lorenz
+worst LSTM,0,0.7965330604203567,9,9,Lorenz
+worst LSTM,1,0.5667854206843026,9,9,Lorenz
+worst LSTM,2,1.0924654853054483,9,9,Lorenz
+worst LSTM,3,0.7229153714989919,9,9,Lorenz
+worst LSTM,4,0.5047008797932829,9,9,Lorenz
+worst LSTM,5,1.0440211178395242,9,9,Lorenz
+worst LSTM,6,0.6766535983459243,9,9,Lorenz
+worst LSTM,7,0.8229125902733485,9,9,Lorenz
+worst LSTM,8,0.6285571416701232,9,9,Lorenz
+worst LSTM,9,0.9735860240741722,9,9,Lorenz
+worst LSTM,10,0.761846616377275,9,9,Lorenz
+worst LSTM,11,0.68837446865833,9,9,Lorenz
+worst LSTM,12,0.646000070195765,9,9,Lorenz
+worst LSTM,13,1.0298602512630382,9,9,Lorenz
+worst LSTM,14,0.8557365509191255,9,9,Lorenz
+worst LSTM,15,0.8240006088525265,9,9,Lorenz
+worst LSTM,16,0.9756559215148211,9,9,Lorenz
+worst LSTM,17,1.0109547881275405,9,9,Lorenz
+worst LSTM,18,0.951744232458592,9,9,Lorenz
+worst LSTM,19,1.0012292469136082,9,9,Lorenz
+worst LSTM,20,0.9272221974102544,9,9,Lorenz
+worst LSTM,21,0.738471295129954,9,9,Lorenz
+worst LSTM,22,0.8241086660174093,9,9,Lorenz
+worst LSTM,23,0.8150970692542643,9,9,Lorenz
+worst LSTM,24,0.5759811367738432,9,9,Lorenz
+worst LSTM,0,0.6368405891689152,11,11,Lorenz
+worst LSTM,1,0.707245409045678,11,11,Lorenz
+worst LSTM,2,0.6925660188101654,11,11,Lorenz
+worst LSTM,3,0.691045073736414,11,11,Lorenz
+worst LSTM,4,0.5949016585263593,11,11,Lorenz
+worst LSTM,5,0.6492431368193413,11,11,Lorenz
+worst LSTM,6,0.5667320565641668,11,11,Lorenz
+worst LSTM,7,0.9606896833078787,11,11,Lorenz
+worst LSTM,8,0.6608353288148519,11,11,Lorenz
+worst LSTM,9,0.7401261101319799,11,11,Lorenz
+worst LSTM,10,0.5869444988281045,11,11,Lorenz
+worst LSTM,11,0.6629514793044069,11,11,Lorenz
+worst LSTM,12,0.5850290385278502,11,11,Lorenz
+worst LSTM,13,0.7662425209283429,11,11,Lorenz
+worst LSTM,14,0.5012843906392945,11,11,Lorenz
+worst LSTM,15,0.8410326580704806,11,11,Lorenz
+worst LSTM,16,0.4977010034105355,11,11,Lorenz
+worst LSTM,17,0.773411602794048,11,11,Lorenz
+worst LSTM,18,0.5607914861221455,11,11,Lorenz
+worst LSTM,19,0.3998225600833231,11,11,Lorenz
+worst LSTM,20,0.6420035585302171,11,11,Lorenz
+worst LSTM,21,0.9014355236723814,11,11,Lorenz
+worst LSTM,22,0.8554937537333561,11,11,Lorenz
+worst LSTM,23,0.5904575744478889,11,11,Lorenz
+worst LSTM,24,0.7334343185886102,11,11,Lorenz
