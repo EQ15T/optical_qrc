@@ -38,7 +38,7 @@ def compute_rank(
     max_num_samples=250,
     num_washout=10,
 ):
-    pp = ParametricProcess("ktp_780nm_pdc")
+    pp = ParametricProcess("ktp_780nm_pdc", 180)
     reservoir = PumpShapingProtocol(N, n, pp, use_xp_observables=use_xp)
     reservoir.reset(seed=trial)
 

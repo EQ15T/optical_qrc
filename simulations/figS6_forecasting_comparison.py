@@ -113,7 +113,6 @@ def compute_results(taskName, reservoirs: list, num_trials: int, n_jobs=1):
                 config = r.get_config()
                 name = "LSTM"
            
-            print(label)
             for trial in range(num_trials):
                 if name == "LSTM":
                     # Create a new instance of the reservoir for each trial
@@ -136,7 +135,6 @@ def compute_results(taskName, reservoirs: list, num_trials: int, n_jobs=1):
     df = pd.DataFrame(results)
 
     path_file = RESULTS_FILE.replace(".csv", f"_{taskName}.csv")
-    print(RESULTS_FILE)
     print(f"Saving results to {path_file}")
     df.to_csv(
         path_file,
@@ -360,8 +358,9 @@ def obtain_best_quantum(df):
 
 # -------------------------  Main script  -------------------------
 if __name__ == "__main__":
-    taskName= sys.argv[1]
+    taskName = sys.argv[1] if len(sys.argv) >= 2 else "Double-scroll"
     print("Task name:", taskName)
+
     force_run = False
     num_trials = 25
     pp = ParametricProcess("ktp_780nm_pdc", 180)
