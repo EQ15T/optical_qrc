@@ -162,4 +162,7 @@ if __name__ == "__main__":
         compute_results(N_values, num_trials)
 
     data = pd.read_pickle(RESULTS_FILE)
+
+    max_N = 5
+    data = data[data["N"] <= max_N]
     plot_results(data)
