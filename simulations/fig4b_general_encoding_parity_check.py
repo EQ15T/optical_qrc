@@ -54,7 +54,7 @@ def compute_results(params_dicts: dict, num_trials: int):
                 [(pp, N, n, i) for i in range(num_trials)],
                 desc="Trial",
                 leave=False,
-                max_workers=None,
+                max_workers=4,
             ),
             [],
         )
