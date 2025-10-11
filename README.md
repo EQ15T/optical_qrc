@@ -4,5 +4,4 @@
 ![fig3e_global_phase_memory.png](figures/png/fig3e_global_phase_memory.png)
 ![fig4a_global_phase_double_scroll.png](figures/png/fig4a_global_phase_double_scroll.png)
 ![fig4b_general_encoding_parity_check.png](figures/png/fig4b_general_encoding_parity_check.png)
-![fig4cd_general_encoding_expressivity.png](figures/png/fig4cd_general_encoding_expressivity.png)
 ![figS2_global_phase_double_scroll.png](figures/png/figS2_global_phase_double_scroll.png)
