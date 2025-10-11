@@ -87,8 +87,7 @@ class RegressionTask(AbstractTask):
             x = s.reshape(-1, 1)  # No extra last point in this type of task
         else:
             with logging_redirect_tqdm():
-                # for i in tqdm(range(n), desc="Reservoir simulation", leave=False):
-                for i in range(n):
+                for i in tqdm(range(n), desc="Reservoir simulation", leave=False):
                     input_vector = np.tile(s[i], r.input_dimension)
                     x[i, :] = r.step(np.array(input_vector))
 

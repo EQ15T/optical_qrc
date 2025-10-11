@@ -75,7 +75,7 @@ def compute_results(N_values, num_trials: int):
         parameters,
         desc="Parameters and trials",
         leave=False,
-        max_workers=4,
+        max_workers=1,
     )
     # results = [compute_ranks_and_correlations(*p) for p in parameters]
     df = pd.DataFrame(results)
