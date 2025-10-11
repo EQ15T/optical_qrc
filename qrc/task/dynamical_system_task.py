@@ -16,6 +16,7 @@ from ..reservoir.abstract_reservoir import AbstractReservoir
 from . import evaluation_metrics
 from .abstract_task import AbstractTask
 
+
 class DynamicalSystemTaskResult(NamedTuple):
     """
     Evaluation results of a regression task.
@@ -124,11 +125,11 @@ class DynamicalSystemTask(AbstractTask):
             # Directly use the predict method (eg for LSTM)
             # LSTM is trained via backpropagation through time, no need to collect states
             # Data for training is directly the input data
-            x = s[:-1, :] # Erase extra last point (we predict next state)
-            self._r_checkpoint = None # No checkpoint needed
+            x = s[:-1, :]  # Erase extra last point (we predict next state)
+            self._r_checkpoint = None  # No checkpoint needed
         else:
             x, r_chk = self._simulate_reservoir(r, s, n, num_washout + num_train)
-            
+
             self._r_checkpoint = r_chk
 
         self._x = x[num_washout:, :]
@@ -159,16 +160,17 @@ class DynamicalSystemTask(AbstractTask):
         if train_subset[1] > self._num_train:
             raise ValueError("Incorrect training subset size")
 
-
         train_subset = slice(train_subset[0], train_subset[1])
         x_train = self._x[train_subset, :]
         y_train = self._y[train_subset, :]
 
         if hasattr(self._r, "train"):
-            self._r.train(x_train, y_train)  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
+            self._r.train(
+                x_train, y_train
+            )  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
             scaler = None
             model = None
-        else: 
+        else:
             scaler = StandardScaler()
             model = Ridge(alpha=alpha) if alpha else LinearRegression()
             x_train = scaler.fit_transform(x_train)
@@ -208,7 +210,9 @@ class DynamicalSystemTask(AbstractTask):
 
         if hasattr(self._r, "predict"):
             # Directly use the predict method (eg for LSTM)
-            y_pred = self._r.predict(self._x)  # Predict directly with the LSTM reservoir
+            y_pred = self._r.predict(
+                self._x
+            )  # Predict directly with the LSTM reservoir
         else:
             x = self._scaler.transform(self._x)
             y_pred = self._model.predict(x)
@@ -221,7 +225,6 @@ class DynamicalSystemTask(AbstractTask):
         corrcoeff = evaluation_metrics.correlation_coefficient(y_pred_test, y_true_test)
         nmse = evaluation_metrics.nmse(y_pred_test, y_true_test)
         psde_emd, psde = evaluation_metrics.spectral_distances(y_pred_test, y_true_test)
-        
 
         if plot_results:
             max_num_observables = 4

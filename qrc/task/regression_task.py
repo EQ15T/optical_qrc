@@ -14,6 +14,7 @@ from ..reservoir.abstract_reservoir import AbstractReservoir
 from . import evaluation_metrics
 from .abstract_task import AbstractTask
 
+
 class RegressionTaskResult(NamedTuple):
     """
     Evaluation results of a regression task.
@@ -83,14 +84,14 @@ class RegressionTask(AbstractTask):
         if hasattr(r, "train"):
             # LSTM is trained via backpropagation through time, no need to collect states
             # Reshaping from (timesteps,) to (timesteps, 1) for compatibility
-            x = s.reshape(-1, 1) # No extra last point in this type of task
-        else: 
+            x = s.reshape(-1, 1)  # No extra last point in this type of task
+        else:
             with logging_redirect_tqdm():
                 # for i in tqdm(range(n), desc="Reservoir simulation", leave=False):
                 for i in range(n):
                     input_vector = np.tile(s[i], r.input_dimension)
                     x[i, :] = r.step(np.array(input_vector))
-        
+
         self._x = x[num_washout:, :]
         self._s = s
         self._r = r
@@ -129,11 +130,13 @@ class RegressionTask(AbstractTask):
         y_train = fn(self._s)[self._num_washout :][train_subset]
 
         if hasattr(self._r, "train"):
-            self._r.train(x_train, y_train)  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
+            self._r.train(
+                x_train, y_train
+            )  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
             scaler = None
             model = None
-        else: 
-            
+        else:
+
             scaler = StandardScaler()
             model = model_cls()
             x_train = scaler.fit_transform(x_train)
@@ -164,11 +167,11 @@ class RegressionTask(AbstractTask):
             raise ValueError("Output layer not trained")
 
         if hasattr(self._r, "predict"):
-            y_pred = self._r.predict(self._x)  
-            y_pred = y_pred.reshape(-1) # Reshape from (timesteps, 1) to (timesteps,)
+            y_pred = self._r.predict(self._x)
+            y_pred = y_pred.reshape(-1)  # Reshape from (timesteps, 1) to (timesteps,)
         else:
             x = self._scaler.transform(self._x)
-            
+
             y_pred = self._model.predict(x)
 
         y_true = self._fn(self._s)[self._num_washout :]
