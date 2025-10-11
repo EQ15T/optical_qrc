@@ -14,8 +14,6 @@ from ..reservoir.abstract_reservoir import AbstractReservoir
 from . import evaluation_metrics
 from .abstract_task import AbstractTask
 
-from ..reservoir.long_short_term_memory import LongShortTermMemory
-
 class RegressionTaskResult(NamedTuple):
     """
     Evaluation results of a regression task.
@@ -82,7 +80,7 @@ class RegressionTask(AbstractTask):
 
         x = np.zeros((n, r.output_dimension))
 
-        if isinstance(r, LongShortTermMemory):
+        if hasattr(r, "train"):
             # LSTM is trained via backpropagation through time, no need to collect states
             # Reshaping from (timesteps,) to (timesteps, 1) for compatibility
             x = s.reshape(-1, 1) # No extra last point in this type of task
@@ -130,7 +128,7 @@ class RegressionTask(AbstractTask):
         x_train = self._x[train_subset, :]
         y_train = fn(self._s)[self._num_washout :][train_subset]
 
-        if isinstance(self._r, LongShortTermMemory):
+        if hasattr(self._r, "train"):
             self._r.train(x_train, y_train)  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
             scaler = None
             model = None
@@ -165,7 +163,7 @@ class RegressionTask(AbstractTask):
         if not self._trained:
             raise ValueError("Output layer not trained")
 
-        if isinstance(self._r, LongShortTermMemory):
+        if hasattr(self._r, "predict"):
             y_pred = self._r.predict(self._x)  
             y_pred = y_pred.reshape(-1) # Reshape from (timesteps, 1) to (timesteps,)
         else:

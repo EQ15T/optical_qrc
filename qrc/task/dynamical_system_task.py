@@ -16,8 +16,6 @@ from ..reservoir.abstract_reservoir import AbstractReservoir
 from . import evaluation_metrics
 from .abstract_task import AbstractTask
 
-from ..reservoir.long_short_term_memory import LongShortTermMemory
-
 class DynamicalSystemTaskResult(NamedTuple):
     """
     Evaluation results of a regression task.
@@ -122,7 +120,8 @@ class DynamicalSystemTask(AbstractTask):
         self._num_repetitions = int(np.ceil(r.input_dimension / dimension))
         self._dimension = r.input_dimension
 
-        if isinstance(r, LongShortTermMemory):
+        if hasattr(r, "train"):
+            # Directly use the predict method (eg for LSTM)
             # LSTM is trained via backpropagation through time, no need to collect states
             # Data for training is directly the input data
             x = s[:-1, :] # Erase extra last point (we predict next state)
@@ -165,7 +164,7 @@ class DynamicalSystemTask(AbstractTask):
         x_train = self._x[train_subset, :]
         y_train = self._y[train_subset, :]
 
-        if isinstance(self._r, LongShortTermMemory):
+        if hasattr(self._r, "train"):
             self._r.train(x_train, y_train)  # Train the LSTM reservoir directly (LSTM + Dense Layer through backpropagation)
             scaler = None
             model = None
@@ -207,7 +206,8 @@ class DynamicalSystemTask(AbstractTask):
         if free_running:
             self._simulate_free_running()
 
-        if isinstance(self._r, LongShortTermMemory):
+        if hasattr(self._r, "predict"):
+            # Directly use the predict method (eg for LSTM)
             y_pred = self._r.predict(self._x)  # Predict directly with the LSTM reservoir
         else:
             x = self._scaler.transform(self._x)
