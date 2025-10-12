@@ -40,14 +40,28 @@ The ```simulations``` directory contains the scripts reproducing the figures fro
 
 ## Provided simulations
 
+### Examples
+
 * ```0_example.py``` is a simple example of how to use the library, and uses the pump shaping protocol to learn a binary function (temporal XOR).
-* ```0_general_encoding_double_scroll.py``` compares different parameter sets for the double scroll task, with the general encoding.
+
+### Figures included in the manuscript
+
 * ```fig3c_global_phase_xor.py``` highlights the influence of training size and measurement noise on the XOR task.
 * ```fig3e_global_phase_memory.py``` shows how increasing the number of parallel reservoirs improve prediction accuracy on the memory task for an increasing time lag.
 * ```fig4a_global_phase_double_scroll.py``` shows the predicted trajectory of the double scroll system (global phase protocol).
 * ```fig4b_general_encoding_parity_check.py``` illustrates how different choices of the N and n parameters impact the performance of the pump encoding protocol for a parity check task.
 * ```fig4cd_general_encoding_expressivity.py``` studies the correlations between observables for the general encoding scheme.
 * ```fig2S_global_phase_double_scroll.py``` shows how the performance of the global phase protocol scales with training set size and number of copies of the reservoir.
+* ```figS4_xor_comparison.py``` compares the quantum reservoir with classical ML methods for the temporal XOR task.
+* ```figS5_memory_comparison.py``` compares the quantum reservoir with classical ML methods for the memory task.
+* ```figS6_forecasting_comparison.py``` compares the quantum reservoir with classical ML methods for the dynamical system forecasting tasks (Double-scroll and Lorenz63).
+
+### Miscellaneous scripts
+
+* ```0_general_encoding_double_scroll.py``` compares different parameter sets for the double scroll task, with the general encoding.
+* ```0_general_encoding_expressivity_all_options.py``` A variation of figure 4cd with the x and p observables included.
+* ```0_classical_optimization_forecasting.py``` and ```0_classical_optimization_regression.py``` perform the grid search for choosing the hyperparameters of the classical ML models.
+
 
 ## Example use
 
