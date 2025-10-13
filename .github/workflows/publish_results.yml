@@ -33,7 +33,7 @@ jobs:
     - name: Run all simulation scripts
       run: |
         export TQDM_DISABLE=1
-        for f in simulations/fig3*.py simulations/fig4*.py simulations/figS2*.py; do
+        for f in simulations/fig3*.py simulations/fig4*.py simulations/figS2*.py simulations/figS4*.py simulations/figS5*.py; do
           echo "Running $f"
           python "$f"
         done
