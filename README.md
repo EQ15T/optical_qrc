@@ -51,7 +51,7 @@ The ```simulations``` directory contains the scripts reproducing the figures fro
 * ```fig4a_global_phase_double_scroll.py``` shows the predicted trajectory of the double scroll system (global phase protocol).
 * ```fig4b_general_encoding_parity_check.py``` illustrates how different choices of the N and n parameters impact the performance of the pump encoding protocol for a parity check task.
 * ```fig4cd_general_encoding_expressivity.py``` studies the correlations between observables for the general encoding scheme.
-* ```fig2S_global_phase_double_scroll.py``` shows how the performance of the global phase protocol scales with training set size and number of copies of the reservoir.
+* ```figS2_global_phase_double_scroll.py``` shows how the performance of the global phase protocol scales with training set size and number of copies of the reservoir.
 * ```figS4_xor_comparison.py``` compares the quantum reservoir with classical ML methods for the temporal XOR task.
 * ```figS5_memory_comparison.py``` compares the quantum reservoir with classical ML methods for the memory task.
 * ```figS6_forecasting_comparison.py``` compares the quantum reservoir with classical ML methods for the dynamical system forecasting tasks (Double-scroll and Lorenz63).
