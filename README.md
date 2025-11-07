@@ -17,7 +17,7 @@ Clone the repository and install in editable mode:
 ```bash
 git clone https://github.com/EQ15T/optical_qrc.git
 cd optical_qrc
-pip install -e .
+pip install -e .```
 
 ## Instructions for reproducing results and figures
 
