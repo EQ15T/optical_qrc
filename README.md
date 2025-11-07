@@ -17,8 +17,8 @@ Clone the repository and install in editable mode:
 ```bash
 git clone https://github.com/EQ15T/optical_qrc.git
 cd optical_qrc
-pip install -e .```
-
+pip install -e .
+```
 ## Instructions for reproducing results and figures
 
 Each script in ```simulations``` is intended to be run from the command line and corresponds to a figure (and the underlying simulation) from the manuscript. For example, to reproduce figure 4a:
