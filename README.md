@@ -2,17 +2,22 @@
 
 This repository contains code for simulating the quantum reservoir computing protocols described in the paper "Experimental memory control in continuous variable optical quantum reservoir computing" by Iris Paparelle, Johan Henaff, Jorge Garcia-Beni, Emilie Gillet, Gian Luca Giorgi, Miguel C. Soriano, Roberta Zambrini and Valentina Parigi [arXiv:2506.07279](https://arxiv.org/abs/2506.07279).
 
-## Setup
+## System requirements
 
-```shell
+- **Programming language:** Python ≥ 3.8  
+- **Dependencies:** numpy (≥ 1.22), matplotlib (≥ 3.10), scikit-learn, pandas, pytest, tqdm  
+  These are automatically installed when running `pip install -e .`  
+- **Typical installation time:** ~1–3 minutes on a standard desktop computer with broadband internet.
+
+---
+
+## Installation guide
+
+Clone the repository and install in editable mode:
+```bash
 git clone https://github.com/EQ15T/optical_qrc.git
 cd optical_qrc
 pip install -e .
-```
-
-## Dependencies
-
-The code requires the following libraries: numpy (>= 1.22), matplotlib (>= 3.10), scikit-learn, pandas, pytest and tdqm. These dependencies are automatically installed when running ```pip install```.
 
 ## Instructions for reproducing results and figures
 
